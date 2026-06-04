@@ -1,0 +1,1788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Sister Cities Innovation Hub — Downtown San Jose</title>
+<link rel="icon" type="image/png" href="img/favicon.png">
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f5f1ea;
+    --bg-card: #ffffff;
+    --bg-soft: #ede7dc;
+    --ink: #0d2330;
+    --ink-2: #1a3845;
+    --ink-dim: #5a6770;
+    --ink-mute: #8a929a;
+    --line: rgba(13, 35, 48, 0.08);
+    --line-hi: rgba(13, 35, 48, 0.15);
+    --agave: #1f7a8c;
+    --agave-deep: #135866;
+    --agave-soft: #d9eaee;
+    --orange: #d9621f;
+    --orange-soft: #f3d9c8;
+    --gold: #c89942;
+    --radius: 14px;
+    --radius-lg: 24px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter Tight', -apple-system, system-ui, sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+
+  /* NAV */
+  nav.top {
+    position: sticky;
+    top: 0; z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    background: rgba(245, 241, 234, 0.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--line);
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  .logo img {
+    height: 72px;
+    width: auto;
+    display: block;
+  }
+  .nav-links { display: flex; gap: 4px; align-items: center; }
+  .nav-links a {
+    color: var(--ink-2);
+    text-decoration: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.2s;
+  }
+  .nav-links a:hover { color: var(--ink); background: rgba(13,35,48,0.04); }
+  .nav-right { display: flex; align-items: center; gap: 12px; }
+  .lang-toggle {
+    display: flex;
+    background: rgba(13,35,48,0.04);
+    border-radius: 8px;
+    padding: 3px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+  }
+  .lang-toggle button {
+    background: none; border: 0;
+    color: var(--ink-dim);
+    padding: 5px 9px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.2s;
+    font-family: inherit; font-size: inherit; font-weight: inherit;
+  }
+  .lang-toggle button.active { background: var(--ink); color: var(--bg); }
+  .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--orange);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.2s;
+  }
+  .nav-cta:hover { background: #b8511a; }
+
+  /* Breadcrumb */
+  .breadcrumb {
+    max-width: 1320px;
+    margin: 32px auto 0;
+    padding: 0 40px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .breadcrumb a {
+    color: var(--ink-2);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .breadcrumb a:hover { color: var(--orange); }
+
+  /* HERO */
+  .hero {
+    padding: 40px 40px 100px;
+    max-width: 1320px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .hub-flag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    background: var(--orange-soft);
+    border-radius: 100px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--orange);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 28px;
+    font-weight: 600;
+  }
+
+  h1.hub-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(46px, 6vw, 84px);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.035em;
+    margin-bottom: 28px;
+    color: var(--ink);
+  }
+  h1.hub-title em {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--agave-deep);
+  }
+
+  .hub-sub {
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--ink-dim);
+    margin-bottom: 36px;
+    max-width: 540px;
+  }
+  .hub-sub strong { color: var(--ink); font-weight: 600; }
+
+  .hub-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 22px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .btn-primary {
+    background: var(--ink);
+    color: var(--bg);
+  }
+  .btn-primary:hover { background: var(--agave-deep); transform: translateY(-1px); }
+  .btn-orange {
+    background: var(--orange);
+    color: white;
+  }
+  .btn-orange:hover { background: #b8511a; transform: translateY(-1px); }
+  .btn-secondary {
+    background: transparent;
+    color: var(--ink);
+    border-color: var(--line-hi);
+  }
+  .btn-secondary:hover { background: var(--bg-card); border-color: var(--ink); }
+  .btn-arrow {
+    display: inline-block;
+    transition: transform 0.2s;
+  }
+  .btn:hover .btn-arrow { transform: translateX(3px); }
+
+  /* Hub hero card with photo */
+  .hub-card {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 1 / 1.05;
+    box-shadow: 0 30px 60px -20px rgba(13, 35, 48, 0.3);
+    background: var(--bg-soft);
+  }
+  .hub-card-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+  .hub-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(5, 5, 16, 0.7) 0%, rgba(5, 5, 16, 0.45) 35%, rgba(5, 5, 16, 0.95) 100%);
+    z-index: 2;
+  }
+  .hub-card-content {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    padding: 32px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .hc-pin {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .hc-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.9);
+    background: rgba(13, 35, 48, 0.5);
+    backdrop-filter: blur(8px);
+    padding: 6px 12px;
+    border-radius: 100px;
+    font-weight: 600;
+  }
+  .hc-pin-icon {
+    width: 36px; height: 36px;
+    background: var(--orange);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+    box-shadow: 0 8px 24px rgba(217, 98, 31, 0.5);
+  }
+  .hc-logo-feature {
+    width: 100%;
+    flex: 1;
+    background-image: url('img/logo-mark.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 12px 0;
+    min-height: 0;
+  }
+  .hc-body h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 28px;
+    font-weight: 500;
+    font-style: italic;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  }
+  .hc-body p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.5;
+    max-width: 320px;
+  }
+  .hc-footer {
+    border-top: 1px solid rgba(255,255,255,0.25);
+    padding-top: 18px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .hc-stat-num {
+    font-family: 'Fraunces', serif;
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .hc-stat-lbl {
+    font-size: 10.5px;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.4;
+  }
+
+  /* DOWNTOWN BANNER */
+  .downtown-banner {
+    position: relative;
+    aspect-ratio: 21 / 9;
+    max-height: 480px;
+    overflow: hidden;
+    width: 100%;
+  }
+  .downtown-banner img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .downtown-banner::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(13,35,48,0.2) 0%, rgba(13,35,48,0.65) 100%);
+  }
+  .downtown-content {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 56px;
+    color: white;
+    max-width: 1320px;
+    margin: 0 auto;
+    left: 0; right: 0;
+  }
+  .downtown-content .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .downtown-content .tag::before {
+    content: '';
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--orange);
+    box-shadow: 0 0 14px var(--orange);
+  }
+  .downtown-content h3 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    max-width: 640px;
+  }
+  .downtown-content h3 em {
+    font-style: italic;
+    font-weight: 500;
+    color: #ff9a55;
+  }
+
+  /* TEAM AVATAR PHOTOS */
+  .team-avatar.photo {
+    width: 64px; height: 64px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* SECTIONS */
+  section {
+    padding: 100px 40px;
+    max-width: 1320px;
+    margin: 0 auto;
+  }
+  section.full {
+    max-width: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  section.full > .inner {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 100px 40px;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--agave-deep);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--agave);
+    border-radius: 50%;
+  }
+  .eyebrow.orange { color: var(--orange); }
+  .eyebrow.orange::before { background: var(--orange); }
+
+  h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(36px, 4.5vw, 56px);
+    font-weight: 400;
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    margin-bottom: 20px;
+    max-width: 880px;
+  }
+  h2 em {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--agave-deep);
+  }
+  .section-intro {
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--ink-dim);
+    max-width: 720px;
+    margin-bottom: 64px;
+  }
+
+  /* VISION BAND */
+  .vision-band {
+    background: var(--bg-soft);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .vision-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .vision-grid .lead {
+    font-size: 24px;
+    line-height: 1.4;
+    color: var(--ink);
+    margin-bottom: 24px;
+    font-weight: 400;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+  }
+  .vision-grid p {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink-dim);
+    margin-bottom: 18px;
+  }
+  .vision-grid p strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  /* PILLARS */
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .pillar {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 32px 28px;
+    transition: all 0.3s;
+  }
+  .pillar:hover {
+    border-color: var(--ink);
+    transform: translateY(-2px);
+    box-shadow: 0 20px 40px -20px rgba(13, 35, 48, 0.15);
+  }
+  .pillar-icon {
+    width: 48px; height: 48px;
+    background: var(--agave-soft);
+    color: var(--agave-deep);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    font-size: 20px;
+  }
+  .pillar[data-c="2"] .pillar-icon { background: var(--orange-soft); color: var(--orange); }
+  .pillar[data-c="3"] .pillar-icon { background: var(--bg-soft); color: var(--ink); }
+  .pillar[data-c="4"] .pillar-icon { background: var(--orange-soft); color: var(--orange); }
+  .pillar[data-c="5"] .pillar-icon { background: var(--bg-soft); color: var(--ink); }
+  .pillar[data-c="6"] .pillar-icon { background: var(--agave-soft); color: var(--agave-deep); }
+
+  .pillar h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.15;
+    margin-bottom: 12px;
+    letter-spacing: -0.015em;
+  }
+  .pillar p {
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--ink-dim);
+  }
+
+  /* ECOSYSTEM */
+  .ecosystem-band {
+    background: var(--ink);
+    color: var(--bg);
+  }
+  .ecosystem-band .eyebrow { color: #7fc7d4; }
+  .ecosystem-band .eyebrow::before { background: #7fc7d4; }
+  .ecosystem-band h2 { color: var(--bg); }
+  .ecosystem-band h2 em { color: #ff9a55; }
+  .ecosystem-band .section-intro { color: rgba(245,241,234,0.7); }
+
+  .stakeholder-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .stakeholder {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius);
+    padding: 28px 26px;
+    transition: all 0.3s;
+  }
+  .stakeholder:hover {
+    background: rgba(255,255,255,0.05);
+    border-color: rgba(255,255,255,0.18);
+    transform: translateY(-2px);
+  }
+  .stk-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(245,241,234,0.55);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .stakeholder[data-c="1"] .stk-tag { color: #ff9a55; }
+  .stakeholder[data-c="2"] .stk-tag { color: #7fc7d4; }
+  .stakeholder[data-c="3"] .stk-tag { color: #ff9a55; }
+  .stakeholder[data-c="4"] .stk-tag { color: #7fc7d4; }
+  .stakeholder[data-c="5"] .stk-tag { color: #ff9a55; }
+  .stakeholder[data-c="6"] .stk-tag { color: #7fc7d4; }
+
+  .stakeholder h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.15;
+    margin-bottom: 14px;
+    letter-spacing: -0.015em;
+    color: var(--bg);
+  }
+  .stk-section {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .stk-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(245,241,234,0.5);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .stakeholder ul { list-style: none; }
+  .stakeholder li {
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: rgba(245,241,234,0.8);
+    padding-left: 16px;
+    position: relative;
+    margin-bottom: 6px;
+  }
+  .stakeholder li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: rgba(245,241,234,0.4);
+  }
+
+  /* ROADMAP */
+  .timeline-wrap {
+    position: relative;
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .timeline-wrap::before {
+    content: '';
+    position: absolute;
+    top: 28px;
+    left: 10%; right: 10%;
+    height: 1px;
+    background: var(--line-hi);
+    z-index: 0;
+  }
+  .tl-step {
+    padding: 0;
+    position: relative;
+    z-index: 1;
+  }
+  .tl-dot {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .tl-step[data-c="1"] .tl-dot { background: var(--agave-deep); color: white; border-color: var(--agave-deep); }
+  .tl-step[data-c="2"] .tl-dot { background: var(--orange); color: white; border-color: var(--orange); }
+  .tl-step[data-c="3"] .tl-dot { background: var(--ink); color: white; border-color: var(--ink); }
+
+  .tl-time {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-mute);
+    margin-bottom: 8px;
+    text-align: center;
+  }
+  .tl-step h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+    text-align: center;
+  }
+  .tl-step h4 em { font-style: italic; color: var(--agave-deep); }
+  .tl-card {
+    margin-top: 16px;
+    padding: 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+  }
+  .tl-card ul { list-style: none; }
+  .tl-card li {
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--ink-dim);
+    padding-left: 18px;
+    position: relative;
+    margin-bottom: 10px;
+  }
+  .tl-card li:last-child { margin-bottom: 0; }
+  .tl-card li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--orange);
+    font-family: monospace;
+  }
+
+  /* METRICS */
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .metric {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 32px 24px;
+    transition: all 0.3s;
+  }
+  .metric:hover {
+    border-color: var(--ink);
+    transform: translateY(-2px);
+    box-shadow: 0 16px 32px -16px rgba(13, 35, 48, 0.1);
+  }
+  .metric-icon {
+    width: 44px; height: 44px;
+    background: var(--bg-soft);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--agave-deep);
+  }
+  .metric[data-c="2"] .metric-icon { color: var(--orange); }
+  .metric[data-c="3"] .metric-icon { color: var(--agave-deep); }
+  .metric[data-c="4"] .metric-icon { color: var(--orange); }
+  .metric h5 {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    letter-spacing: -0.015em;
+  }
+  .metric p {
+    font-size: 13.5px;
+    color: var(--ink-dim);
+    line-height: 1.5;
+  }
+
+  /* TEAM */
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .team-member {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    transition: all 0.3s;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+  }
+  .team-member:hover {
+    border-color: var(--ink);
+    transform: translateY(-2px);
+    box-shadow: 0 16px 32px -16px rgba(13, 35, 48, 0.12);
+  }
+  .team-member .linkedin-icon {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 22px;
+    height: 22px;
+    border-radius: 4px;
+    background: var(--ink-mute);
+    color: var(--bg-card);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    opacity: 0;
+    transform: translateY(-4px);
+    transition: all 0.25s;
+    letter-spacing: -0.02em;
+  }
+  .team-member:hover .linkedin-icon {
+    opacity: 1;
+    transform: translateY(0);
+    background: #0a66c2;
+    color: white;
+  }
+  .team-avatar {
+    width: 88px; height: 88px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fraunces', serif;
+    font-size: 28px;
+    font-style: italic;
+    color: white;
+    font-weight: 500;
+    background: linear-gradient(135deg, var(--agave) 0%, var(--agave-deep) 100%);
+    box-shadow:
+      0 12px 24px -10px rgba(13, 35, 48, 0.25),
+      inset 0 1px 0 rgba(255,255,255,0.15);
+    letter-spacing: -0.02em;
+    position: relative;
+    overflow: hidden;
+  }
+  .team-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    position: relative;
+    z-index: 2;
+  }
+  .team-avatar::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 25%, rgba(255,255,255,0.25), transparent 55%);
+    pointer-events: none;
+    z-index: 1;
+  }
+  .team-avatar > * { position: relative; z-index: 2; }
+  .team-member[data-c="2"] .team-avatar {
+    background: linear-gradient(135deg, #e8722e 0%, #b8511a 100%);
+  }
+  .team-member[data-c="3"] .team-avatar {
+    background: linear-gradient(135deg, #1d3b50 0%, #0a1822 100%);
+  }
+  .team-member[data-c="4"] .team-avatar {
+    background: linear-gradient(135deg, #2a8fa3 0%, #155562 100%);
+  }
+  .team-member[data-c="5"] .team-avatar {
+    background: linear-gradient(135deg, #d4a843 0%, #a07f1e 100%);
+  }
+  .team-member:hover .team-avatar {
+    transform: scale(1.04);
+    transition: transform 0.25s;
+  }
+  .team-member h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 19px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+  .team-member .role {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-mute);
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+  .team-member p {
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--ink-dim);
+  }
+
+  /* CTA */
+  .cta-section {
+    padding: 130px 40px;
+    text-align: center;
+  }
+  .cta-box {
+    max-width: 920px;
+    margin: 0 auto;
+    background: var(--ink);
+    color: var(--bg);
+    border-radius: var(--radius-lg);
+    padding: 72px 56px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-box::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 0% 100%, rgba(31, 122, 140, 0.4), transparent 50%),
+      radial-gradient(ellipse at 100% 0%, rgba(217, 98, 31, 0.25), transparent 50%);
+    pointer-events: none;
+  }
+  .cta-box > * { position: relative; z-index: 1; }
+  .cta-box h2 { margin: 0 auto 16px; color: var(--bg); }
+  .cta-box h2 em { color: #ff9a55; }
+  .cta-box p {
+    color: rgba(245, 241, 234, 0.75);
+    font-size: 18px;
+    margin: 0 auto 36px;
+    max-width: 580px;
+  }
+  .cta-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .cta-box .btn-secondary {
+    background: rgba(255,255,255,0.06);
+    color: var(--bg);
+    border-color: rgba(255,255,255,0.15);
+  }
+  .cta-box .btn-secondary:hover {
+    background: rgba(255,255,255,0.12);
+    border-color: rgba(255,255,255,0.3);
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 64px 40px 32px;
+    background: var(--bg);
+  }
+  .foot-grid {
+    max-width: 1320px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--line);
+  }
+  .foot-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .foot-brand-mark {
+    width: 96px;
+    height: 64px;
+    background-image: url('img/logo-mark.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    flex-shrink: 0;
+  }
+  .foot-brand-text {
+    font-family: 'Fraunces', serif;
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+  }
+  .foot-brand-text small {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-mute);
+    margin-top: 4px;
+    font-weight: 500;
+  }
+  .foot-brand-text .x {
+    color: var(--orange);
+    font-style: italic;
+    font-weight: 400;
+  }
+  .foot-tag {
+    color: var(--ink-dim);
+    font-size: 14.5px;
+    line-height: 1.55;
+    max-width: 320px;
+  }
+  .foot-col h5 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-mute);
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+  .foot-col ul { list-style: none; }
+  .foot-col li { margin-bottom: 8px; }
+  .foot-col a {
+    color: var(--ink-2);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+  }
+  .foot-col a:hover { color: var(--orange); }
+  .foot-bottom {
+    max-width: 1320px;
+    margin: 28px auto 0;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-mute);
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  /* RESPONSIVE */
+  /* ============ RESPONSIVE TABLETS / PHONES MEDIANOS ============ */
+  @media (max-width: 980px) {
+    nav.top { padding: 10px 20px; }
+    .nav-links { display: none; }
+    .logo img { height: 52px; }
+    .breadcrumb { padding: 0 20px; }
+    .hero { padding: 30px 20px 60px; grid-template-columns: 1fr; gap: 40px; }
+    .hub-card { aspect-ratio: auto; min-height: 460px; max-width: 460px; }
+    .downtown-banner { aspect-ratio: 4/3; }
+    .downtown-content { padding: 28px 20px; }
+    section { padding: 70px 20px; }
+    section.full > .inner { padding: 70px 20px; }
+    .vision-grid { grid-template-columns: 1fr; gap: 32px; }
+    .pillars-grid { grid-template-columns: 1fr; }
+    .stakeholder-grid { grid-template-columns: 1fr; }
+    .timeline-wrap { grid-template-columns: 1fr; gap: 24px; }
+    .timeline-wrap::before { display: none; }
+    .metrics-grid { grid-template-columns: 1fr 1fr; }
+    .team-grid { grid-template-columns: 1fr 1fr; }
+    .cta-section { padding: 80px 20px; }
+    .cta-box { padding: 48px 28px; }
+    .foot-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .foot-bottom { flex-direction: column; text-align: center; }
+  }
+
+  /* ============ RESPONSIVE PHONES (≤ 600px) ============ */
+  @media (max-width: 600px) {
+    /* Typography */
+    h1 { font-size: 38px !important; line-height: 1.02; letter-spacing: -0.025em; }
+    h2 { font-size: 30px; line-height: 1.08; margin-bottom: 16px; }
+    h3 { font-size: 22px; }
+
+    /* Nav */
+    nav.top { padding: 9px 16px; }
+    .logo img { height: 44px; }
+    .nav-cta { padding: 9px 14px; font-size: 13px; }
+    .lang-toggle button { padding: 6px 9px; font-size: 11px; }
+
+    /* Sections */
+    section { padding: 56px 18px; }
+    section.full > .inner { padding: 56px 18px; }
+    .hero { padding: 24px 18px 50px; gap: 32px; }
+    .breadcrumb { padding: 0 18px; }
+
+    /* Hub card */
+    .hub-card { min-height: 360px; max-width: 100%; }
+
+    /* Downtown banner */
+    .downtown-content { padding: 24px 20px; }
+    .downtown-content h3 { font-size: 24px; }
+
+    /* Pillars */
+    .pillar-card { padding: 24px 22px; }
+    .pillar-num { font-size: 38px; }
+    .pillar-card h4 { font-size: 19px; }
+
+    /* Stakeholder */
+    .stakeholder-card { padding: 24px 22px; }
+
+    /* Timeline */
+    .timeline-item { padding: 22px 22px 22px 56px; }
+
+    /* Metrics — single column on phone */
+    .metrics-grid { grid-template-columns: 1fr; gap: 14px; }
+    .metric-card { padding: 28px 24px; }
+    .metric-num { font-size: 48px !important; }
+
+    /* Team — single column with horizontal layout */
+    .team-grid { grid-template-columns: 1fr; gap: 14px; }
+    .team-member { padding: 24px 22px; display: flex !important; gap: 18px; align-items: flex-start; }
+    .team-avatar { width: 76px; height: 76px; margin-bottom: 0; flex-shrink: 0; }
+    .team-member h4 { font-size: 18px; margin-bottom: 2px; }
+    .team-member .role { margin-bottom: 8px; font-size: 11px; }
+    .team-member p { font-size: 14px; line-height: 1.5; }
+    .team-member .linkedin-icon {
+      top: 16px; right: 16px;
+      opacity: 1;
+      transform: none;
+      background: #0a66c2;
+      color: white;
+    }
+
+    /* CTA */
+    .cta-section { padding: 60px 18px; }
+    .cta-box { padding: 36px 22px; }
+    .cta-box h2 { font-size: 28px; }
+    .cta-actions { flex-direction: column; align-items: stretch; }
+    .cta-actions .btn { justify-content: center; }
+
+    /* Footer */
+    .foot-grid { grid-template-columns: 1fr; gap: 28px; }
+    .footer { padding: 40px 18px 20px; }
+    .foot-brand-mark { width: 72px; height: 48px; }
+    .foot-brand-text { font-size: 22px; }
+
+    /* Buttons */
+    .btn { padding: 12px 18px; font-size: 14px; }
+  }
+
+  /* I18N */
+  [data-lang="es"] { display: none; }
+  html[lang="es"] [data-lang="en"] { display: none; }
+  html[lang="es"] [data-lang="es"] { display: inline; }
+  .ent, .est { display: inline; }
+  html[lang="es"] .ent { display: none; }
+  html:not([lang="es"]) .est { display: none; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="top">
+  <a href="index.html" class="logo" aria-label="Sister Cities Guadalajara × San Jose">
+    <img src="img/logo.png" alt="Sister Cities Guadalajara × San Jose"/>
+  </a>
+  <div class="nav-links">
+    <a href="#vision"><span class="ent">Vision</span><span class="est">Visión</span></a>
+    <a href="#pillars"><span class="ent">Pillars</span><span class="est">Pilares</span></a>
+    <a href="#ecosystem"><span class="ent">Ecosystem</span><span class="est">Ecosistema</span></a>
+    <a href="#roadmap"><span class="ent">Roadmap</span><span class="est">Hoja de ruta</span></a>
+    <a href="#team"><span class="ent">Team</span><span class="est">Equipo</span></a>
+  </div>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button class="active" data-set-lang="en">EN</button>
+      <button data-set-lang="es">ES</button>
+    </div>
+    <a href="#connect" class="nav-cta">
+      <span class="ent">Partner with us</span><span class="est">Aliarse</span>
+    </a>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <a href="index.html">GDL × SJC</a> &nbsp;/&nbsp; <span><span class="ent">Innovation Hub</span><span class="est">Hub de Innovación</span></span>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div>
+    <span class="hub-flag">
+      ★&nbsp;<span class="ent">Flagship Project · Downtown San Jose</span><span class="est">Proyecto Insignia · Centro de San José</span>
+    </span>
+    <h1 class="hub-title">
+      <span class="ent">A gateway to <em>global innovation</em>.</span>
+      <span class="est">Una puerta a la <em>innovación global</em>.</span>
+    </h1>
+    <p class="hub-sub">
+      <span class="ent">The <strong>Sister Cities Innovation Hub</strong> is a physical innovation bridge in Downtown San Jose — connecting global startups, corporations and delegations with Silicon Valley's resources, expertise and networks. A permanent landing pad for any city — Sister or not — looking to grow in the Valley.</span>
+      <span class="est">El <strong>Sister Cities Innovation Hub</strong> es un puente físico de innovación en el centro de San José — conectando startups globales, corporativos y delegaciones con los recursos, la experiencia y las redes de Silicon Valley. Una plataforma permanente de aterrizaje para cualquier ciudad — Hermana o no — que busque crecer en el Valle.</span>
+    </p>
+    <div class="hub-cta">
+      <a href="#connect" class="btn btn-orange">
+        <span class="ent">Become a partner</span>
+        <span class="est">Conviértete en socio</span>
+        <span class="btn-arrow">→</span>
+      </a>
+      <a href="#vision" class="btn btn-secondary">
+        <span class="ent">Explore the vision</span>
+        <span class="est">Explorar la visión</span>
+      </a>
+    </div>
+  </div>
+
+  <div>
+    <div class="hub-card">
+      <img class="hub-card-photo" src="img/sj.jpg" alt="San Jose, California — Silicon Valley"/>
+      <div class="hub-card-overlay"></div>
+      <div class="hub-card-content">
+        <div class="hc-pin">
+          <span class="hc-eyebrow">DOWNTOWN SAN JOSE</span>
+          <span class="hc-pin-icon">◉</span>
+        </div>
+        <div class="hc-logo-feature"></div>
+        <div class="hc-body">
+          <h4>
+            <span class="ent">A landing pad, by design.</span>
+            <span class="est">Plataforma de aterrizaje, por diseño.</span>
+          </h4>
+          <p>
+            <span class="ent">A physical space in Downtown San Jose where international innovation meets Silicon Valley networks.</span>
+            <span class="est">Un espacio físico en el centro de San José donde la innovación internacional se encuentra con las redes de Silicon Valley.</span>
+          </p>
+        </div>
+        <div class="hc-footer">
+          <div>
+            <div class="hc-stat-num">6</div>
+            <div class="hc-stat-lbl"><span class="ent">Stakeholder types</span><span class="est">Stakeholders</span></div>
+          </div>
+          <div>
+            <div class="hc-stat-num">18 mo</div>
+            <div class="hc-stat-lbl"><span class="ent">Roadmap</span><span class="est">Roadmap</span></div>
+          </div>
+          <div>
+            <div class="hc-stat-num">∞</div>
+            <div class="hc-stat-lbl"><span class="ent">Cities welcome</span><span class="est">Bienvenidas</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- DOWNTOWN BANNER -->
+<div class="downtown-banner">
+  <img src="img/sj.jpg" alt="San Jose, California — Bay Area"/>
+  <div class="downtown-content">
+    <span class="tag">
+      <span class="ent">Downtown San Jose · Capital of Silicon Valley</span>
+      <span class="est">Centro de San José · Capital de Silicon Valley</span>
+    </span>
+    <h3>
+      <span class="ent">Where the Hub <em>plants its flag</em> — the civic heart of the world's most influential tech region.</span>
+      <span class="est">Donde el Hub <em>planta su bandera</em> — el corazón cívico de la región tecnológica más influyente del mundo.</span>
+    </h3>
+  </div>
+</div>
+
+<!-- VISION -->
+<section class="vision-band full" id="vision">
+  <div class="inner">
+    <div class="vision-grid">
+      <div>
+        <span class="eyebrow"><span class="ent">/ Vision</span><span class="est">/ Visión</span></span>
+        <h2>
+          <span class="ent">A bridge that <em>transforms</em> Downtown San Jose.</span>
+          <span class="est">Un puente que <em>transforma</em> el centro de San José.</span>
+        </h2>
+      </div>
+      <div>
+        <p class="lead">
+          <span class="ent">A dynamic innovation bridge between San Jose and its Sister Cities, connecting global startups with Silicon Valley's resources, expertise, and networks.</span>
+          <span class="est">Un puente dinámico de innovación entre San José y sus Ciudades Hermanas, conectando startups globales con los recursos, la experiencia y las redes de Silicon Valley.</span>
+        </p>
+        <p>
+          <span class="ent">The Hub will <strong>drive international collaboration</strong>, support emerging talent, and stimulate Downtown San Jose's economic recovery — reinforcing the city's position as a global leader in innovation.</span>
+          <span class="est">El Hub impulsará la <strong>colaboración internacional</strong>, apoyará al talento emergente y estimulará la recuperación económica del centro de San José — reforzando la posición de la ciudad como líder global en innovación.</span>
+        </p>
+        <p>
+          <span class="ent">A flagship of the GDL × SJC partnership, the Hub is conceived as <strong>infrastructure for the corridor</strong> — open, replicable, and built for the long term.</span>
+          <span class="est">Como proyecto insignia de la alianza GDL × SJC, el Hub se concibe como <strong>infraestructura para el corredor</strong> — abierta, replicable y construida para el largo plazo.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section id="pillars">
+  <span class="eyebrow"><span class="ent">/ Six pillars of impact</span><span class="est">/ Seis pilares de impacto</span></span>
+  <h2>
+    <span class="ent">What the Hub <em>creates</em>.</span>
+    <span class="est">Lo que el Hub <em>crea</em>.</span>
+  </h2>
+  <p class="section-intro">
+    <span class="ent">A single platform delivering compound value across the local economy, the international ecosystem, and the community.</span>
+    <span class="est">Una sola plataforma que entrega valor compuesto a la economía local, al ecosistema internacional y a la comunidad.</span>
+  </p>
+
+  <div class="pillars-grid">
+    <div class="pillar" data-c="1">
+      <div class="pillar-icon">★</div>
+      <h4>
+        <span class="ent">Strengthening Global Leadership</span>
+        <span class="est">Liderazgo Global Reforzado</span>
+      </h4>
+      <p>
+        <span class="ent">Reinforce San Jose's position as a global leader in innovation and international collaboration.</span>
+        <span class="est">Refuerza la posición de San José como líder global en innovación y colaboración internacional.</span>
+      </p>
+    </div>
+    <div class="pillar" data-c="2">
+      <div class="pillar-icon">⊕</div>
+      <h4>
+        <span class="ent">Job Creation</span>
+        <span class="est">Creación de Empleo</span>
+      </h4>
+      <p>
+        <span class="ent">Attract high-skilled talent and create new jobs in tech, innovation, and support services.</span>
+        <span class="est">Atrae talento altamente calificado y genera nuevos empleos en tecnología, innovación y servicios de soporte.</span>
+      </p>
+    </div>
+    <div class="pillar" data-c="3">
+      <div class="pillar-icon">◇</div>
+      <h4>
+        <span class="ent">Cultural Exchange</span>
+        <span class="est">Intercambio Cultural</span>
+      </h4>
+      <p>
+        <span class="ent">Strengthening ties with Sister Cities will encourage cultural and educational exchanges, enriching San Jose's local community.</span>
+        <span class="est">Fortalecer los lazos con las Ciudades Hermanas fomenta intercambios culturales y educativos, enriqueciendo a la comunidad local de San José.</span>
+      </p>
+    </div>
+    <div class="pillar" data-c="4">
+      <div class="pillar-icon">$</div>
+      <h4>
+        <span class="ent">Attracting Investment</span>
+        <span class="est">Atracción de Inversión</span>
+      </h4>
+      <p>
+        <span class="ent">Drive economic development by fostering startup soft-landing and attracting venture capital from across the globe.</span>
+        <span class="est">Impulsa el desarrollo económico fomentando el soft-landing de startups y atrayendo capital de riesgo a nivel global.</span>
+      </p>
+    </div>
+    <div class="pillar" data-c="5">
+      <div class="pillar-icon">◎</div>
+      <h4>
+        <span class="ent">Community Engagement</span>
+        <span class="est">Compromiso Comunitario</span>
+      </h4>
+      <p>
+        <span class="ent">Innovation-related events and public programs will increase civic pride and community involvement.</span>
+        <span class="est">Eventos de innovación y programas públicos incrementan el orgullo cívico y la participación comunitaria.</span>
+      </p>
+    </div>
+    <div class="pillar" data-c="6">
+      <div class="pillar-icon">↗</div>
+      <h4>
+        <span class="ent">Economic Revitalization</span>
+        <span class="est">Revitalización Económica</span>
+      </h4>
+      <p>
+        <span class="ent">Increased activity will boost foot traffic, driving growth for local SMBs and revitalizing the downtown area.</span>
+        <span class="est">El incremento de actividad impulsa el tráfico peatonal, el crecimiento de PyMEs locales y la revitalización del centro.</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ECOSYSTEM -->
+<section class="ecosystem-band full" id="ecosystem">
+  <div class="inner">
+    <span class="eyebrow"><span class="ent">/ Ecosystem</span><span class="est">/ Ecosistema</span></span>
+    <h2>
+      <span class="ent">A collaborative ecosystem that turns <em>engagement</em> into <em>value</em>.</span>
+      <span class="est">Un ecosistema colaborativo que convierte el <em>engagement</em> en <em>valor</em>.</span>
+    </h2>
+    <p class="section-intro">
+      <span class="ent">The Hub orchestrates six stakeholder groups around one common platform — each contributing and capturing distinct value.</span>
+      <span class="est">El Hub orquesta seis grupos de stakeholders alrededor de una plataforma común — cada uno aportando y capturando valor distinto.</span>
+    </p>
+
+    <div class="stakeholder-grid">
+      <div class="stakeholder" data-c="1">
+        <div class="stk-tag">01 · Startups</div>
+        <h4>
+          <span class="ent">Driving innovation &amp; new technologies</span>
+          <span class="est">Impulsando innovación y nuevas tecnologías</span>
+        </h4>
+        <div class="stk-section">
+          <div class="stk-label"><span class="ent">Value proposition</span><span class="est">Propuesta de valor</span></div>
+          <ul>
+            <li><span class="ent">Vibrant collaborative workspace</span><span class="est">Espacio de trabajo vibrante y colaborativo</span></li>
+            <li><span class="ent">Mentorship, pitch events &amp; incubation</span><span class="est">Mentoría, pitch events e incubación</span></li>
+            <li><span class="ent">Soft-landing in Silicon Valley</span><span class="est">Soft-landing en Silicon Valley</span></li>
+          </ul>
+        </div>
+        <div class="stk-section">
+          <div class="stk-label"><span class="ent">Engagement model</span><span class="est">Modelo de relación</span></div>
+          <ul>
+            <li><span class="ent">Membership · Equity · Service fees</span><span class="est">Membresías · Equity · Service fees</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="stakeholder" data-c="2">
+        <div class="stk-tag">02 · <span class="ent">Corporates &amp; CVCs</span><span class="est">Corporativos y CVCs</span></div>
+        <h4>
+          <span class="ent">Seeking growth &amp; investment opportunities</span>
+          <span class="est">Buscando crecimiento y oportunidades de inversión</span>
+        </h4>
+        <div class="stk-section">
+          <div class="stk-label"><span class="ent">Value proposition</span><span class="est">Propuesta de valor</span></div>
+          <ul>
+            <li><span class="ent">Access to emerging tech &amp; AI</span><span class="est">Acceso a tech emergente e IA</span></li>
+            <li><span class="ent">Co-develop, pilots &amp; M&amp;A</span><span class="est">Co-desarrollar, pilotos y M&amp;A</span></li>
+            <li><span class="ent">Access to international markets</span><span class="est">Acceso a mercados internacionales</span></li>
+          </ul>
+        </div>
+        <div class="stk-section">
+          <div class="stk-label"><span class="ent">Engagement model</span><span class="est">Modelo de relación</span></div>
+          <ul>
+            <li><span class="ent">Sponsorships · Paid challenges · Consulting</span><span class="est">Sponsorships · Challenges pagados · Consultoría</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="stakeholder" data-c="3">
+        <div class="stk-tag">03 · <span class="ent">Foreign Agencies</span><span class="est">Agencias Extranjeras</span></div>
+        <h4>
+          <span class="ent">Promoting cross-border collaboration</span>
+          <span class="est">Promoviendo colaboración transfronteriza</span>
+        </h4>
+        <div class="stk-section">
+          <div class="stk-label"><span class="ent">Value proposition</span><span class="est">Propuesta de valor</span></div>
+          <ul>
+            <li><span class="ent">Landing pad for U.S. market</span><span class="est">Landing pad para EE.UU.</span></li>
+            <li><span class="ent">Bilateral innovation &amp; trade</span><span class="est">Innovación y comercio bilateral</span></li>
+            <li><span class="ent">Showcase success stories</span><span class="est">Vitrina de casos de éxito</span></li>
+          </ul>
+        </div>
+        <div class="stk-section">
+          <div class="stk-label"><span class="ent">Engagement model</span><span class="est">Modelo de relación</span></div>
+          <ul>
+            <li><span class="ent">Memberships · Grants · Paid soft-landing · Hosting</span><span class="est">Membresías · Grants · Soft-landing pagado · Hosting</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="stakeholder" data-c="4">
+        <div class="stk-tag">04 · <span class="ent">Angel Investors &amp; VCs</span><span class="est">Inversionistas y VCs</span></div>
+        <h4>
+          <span class="ent">Fueling growth through capital</span>
+          <span class="est">Impulsando crecimiento con capital</span>
+        </h4>
+        <div class="stk-section">
+          <div class="stk-label"><span class="ent">Value proposition</span><span class="est">Propuesta de valor</span></div>
+          <ul>
+            <li><span class="ent">Early access to vetted startups</span><span class="est">Acceso temprano a startups curadas</span></li>
+            <li><span class="ent">Portfolio diversification &amp; co-investment</span><span class="est">Diversificación y co-inversión</span></li>
+            <li><span class="ent">Access to international LPs</span><span class="est">Acceso a LPs internacionales</span></li>
+          </ul>
+        </div>
+        <div class="stk-section">
+          <div class="stk-label"><span class="ent">Engagement model</span><span class="est">Modelo de relación</span></div>
+          <ul>
+            <li><span class="ent">Sponsorships · Co-investment · Educational programs</span><span class="est">Sponsorships · Co-inversión · Programas educativos</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="stakeholder" data-c="5">
+        <div class="stk-tag">05 · <span class="ent">Academic Institutions &amp; R&amp;D</span><span class="est">Instituciones Académicas e I+D</span></div>
+        <h4>
+          <span class="ent">Fostering research &amp; talent</span>
+          <span class="est">Fomentando la investigación y el talento</span>
+        </h4>
+        <div class="stk-section">
+          <div class="stk-label"><span class="ent">Value proposition</span><span class="est">Propuesta de valor</span></div>
+          <ul>
+            <li><span class="ent">Tech transfer &amp; commercialization</span><span class="est">Transferencia tecnológica y comercialización</span></li>
+            <li><span class="ent">Industry partners for research</span><span class="est">Socios industriales para investigación</span></li>
+            <li><span class="ent">Real-world projects for students</span><span class="est">Proyectos reales para estudiantes</span></li>
+          </ul>
+        </div>
+        <div class="stk-section">
+          <div class="stk-label"><span class="ent">Engagement model</span><span class="est">Modelo de relación</span></div>
+          <ul>
+            <li><span class="ent">Internships · Co-op · Joint events &amp; workshops</span><span class="est">Internships · Co-op · Eventos y talleres</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="stakeholder" data-c="6">
+        <div class="stk-tag">06 · <span class="ent">Service Providers</span><span class="est">Proveedores de Servicios</span></div>
+        <h4>
+          <span class="ent">Expertise &amp; advisory at scale</span>
+          <span class="est">Experiencia y asesoría a escala</span>
+        </h4>
+        <div class="stk-section">
+          <div class="stk-label"><span class="ent">Value proposition</span><span class="est">Propuesta de valor</span></div>
+          <ul>
+            <li><span class="ent">Access to clients &amp; business opportunities</span><span class="est">Acceso a clientes y oportunidades</span></li>
+            <li><span class="ent">Brand visibility through partnerships</span><span class="est">Visibilidad de marca</span></li>
+            <li><span class="ent">Access to international markets</span><span class="est">Acceso a mercados internacionales</span></li>
+          </ul>
+        </div>
+        <div class="stk-section">
+          <div class="stk-label"><span class="ent">Engagement model</span><span class="est">Modelo de relación</span></div>
+          <ul>
+            <li><span class="ent">Referral fees · Partnership programs · Marketplace</span><span class="est">Referidos · Partnerships · Marketplace</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section id="roadmap">
+  <span class="eyebrow orange"><span class="ent">/ 18-month roadmap</span><span class="est">/ Hoja de ruta de 18 meses</span></span>
+  <h2>
+    <span class="ent">From <em>activation</em> to a self-sustaining ecosystem.</span>
+    <span class="est">De la <em>activación</em> a un ecosistema auto-sostenible.</span>
+  </h2>
+  <p class="section-intro">
+    <span class="ent">A phased business model that prioritizes early activation with foreign agencies, then expands to corporates, and finally integrates service providers to close the value loop.</span>
+    <span class="est">Un modelo de negocio por fases que prioriza la activación temprana con agencias extranjeras, después expande a corporativos y finalmente integra proveedores de servicios para cerrar el ciclo de valor.</span>
+  </p>
+
+  <div class="timeline-wrap">
+    <div class="tl-step" data-c="1">
+      <div class="tl-dot">M01</div>
+      <div class="tl-time"><span class="ent">First 6 months</span><span class="est">Primeros 6 meses</span></div>
+      <h4>
+        <span class="ent"><em>Activation</em></span>
+        <span class="est"><em>Activación</em></span>
+      </h4>
+      <div class="tl-card">
+        <ul>
+          <li><span class="ent">Foreign agency partnerships</span><span class="est">Alianzas con agencias extranjeras</span></li>
+          <li><span class="ent">Membership programs launched</span><span class="est">Lanzamiento de membresías</span></li>
+          <li><span class="ent">Government grants secured</span><span class="est">Grants gubernamentales asegurados</span></li>
+          <li><span class="ent">Paid soft-landing programs</span><span class="est">Programas de soft-landing pagados</span></li>
+          <li><span class="ent">First representation offices</span><span class="est">Primeras oficinas de representación</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="tl-step" data-c="2">
+      <div class="tl-dot">M12</div>
+      <div class="tl-time"><span class="ent">By month 12</span><span class="est">Al mes 12</span></div>
+      <h4>
+        <span class="ent"><em>Expansion</em></span>
+        <span class="est"><em>Expansión</em></span>
+      </h4>
+      <div class="tl-card">
+        <ul>
+          <li><span class="ent">Corporates &amp; CVCs onboarded</span><span class="est">Incorporación de corporativos y CVCs</span></li>
+          <li><span class="ent">Hackathons &amp; sponsored events</span><span class="est">Hackathons y eventos patrocinados</span></li>
+          <li><span class="ent">Access via chambers &amp; associations</span><span class="est">Acceso vía cámaras y asociaciones</span></li>
+          <li><span class="ent">Paid innovation challenges</span><span class="est">Innovation challenges pagados</span></li>
+          <li><span class="ent">Pilot programs &amp; startup hunting</span><span class="est">Programas piloto y startup hunting</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="tl-step" data-c="3">
+      <div class="tl-dot">M18</div>
+      <div class="tl-time"><span class="ent">By month 18</span><span class="est">Al mes 18</span></div>
+      <h4>
+        <span class="ent"><em>Self-sustaining</em></span>
+        <span class="est"><em>Auto-sostenible</em></span>
+      </h4>
+      <div class="tl-card">
+        <ul>
+          <li><span class="ent">Consultancy &amp; service providers integrated</span><span class="est">Consultoría y proveedores integrados</span></li>
+          <li><span class="ent">Referral fees &amp; partnership revenue</span><span class="est">Ingresos por referidos y partnerships</span></li>
+          <li><span class="ent">Full ecosystem flywheel</span><span class="est">Flywheel del ecosistema activado</span></li>
+          <li><span class="ent">Diversified revenue streams</span><span class="est">Múltiples fuentes de ingresos</span></li>
+          <li><span class="ent">Replicable model</span><span class="est">Modelo replicable</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METRICS -->
+<section>
+  <span class="eyebrow"><span class="ent">/ Success metrics</span><span class="est">/ Métricas de éxito</span></span>
+  <h2>
+    <span class="ent">How we <em>measure</em> impact.</span>
+    <span class="est">Cómo <em>medimos</em> el impacto.</span>
+  </h2>
+  <p class="section-intro">
+    <span class="ent">A clear scoreboard linking community, culture, and capital.</span>
+    <span class="est">Un tablero claro que conecta comunidad, cultura y capital.</span>
+  </p>
+
+  <div class="metrics-grid">
+    <div class="metric" data-c="1">
+      <div class="metric-icon">⊕</div>
+      <h5>
+        <span class="ent">Companies established</span>
+        <span class="est">Empresas establecidas</span>
+      </h5>
+      <p>
+        <span class="ent">Number of companies that established operations in San Jose through the Hub.</span>
+        <span class="est">Número de empresas que se establecieron en San José a través del Hub.</span>
+      </p>
+    </div>
+    <div class="metric" data-c="2">
+      <div class="metric-icon">$</div>
+      <h5>
+        <span class="ent">Capital raised</span>
+        <span class="est">Capital levantado</span>
+      </h5>
+      <p>
+        <span class="ent">Total funding raised by Hub-resident companies operating in San Jose.</span>
+        <span class="est">Capital total levantado por empresas residentes del Hub.</span>
+      </p>
+    </div>
+    <div class="metric" data-c="3">
+      <div class="metric-icon">⚹</div>
+      <h5>
+        <span class="ent">Events &amp; attendees</span>
+        <span class="est">Eventos y asistentes</span>
+      </h5>
+      <p>
+        <span class="ent">Innovation events hosted, attendees engaged, downtown foot-traffic generated.</span>
+        <span class="est">Eventos de innovación, asistentes, tráfico generado en el centro.</span>
+      </p>
+    </div>
+    <div class="metric" data-c="4">
+      <div class="metric-icon">◇</div>
+      <h5>
+        <span class="ent">Foreign partners</span>
+        <span class="est">Socios extranjeros</span>
+      </h5>
+      <p>
+        <span class="ent">Foreign partners and delegations visiting the city and engaging with the Hub.</span>
+        <span class="est">Socios y delegaciones extranjeras que visitan la ciudad y se relacionan con el Hub.</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <span class="eyebrow orange"><span class="ent">/ Team</span><span class="est">/ Equipo</span></span>
+  <h2>
+    <span class="ent">Built by <em>bridge-builders</em>.</span>
+    <span class="est">Construido por <em>tejedores de puentes</em>.</span>
+  </h2>
+  <p class="section-intro">
+    <span class="ent">A team with deep experience connecting Mexico, Latin America and Silicon Valley.</span>
+    <span class="est">Un equipo con experiencia profunda conectando México, Latinoamérica y Silicon Valley.</span>
+  </p>
+
+  <div class="team-grid">
+    <a class="team-member" data-c="1" href="https://www.linkedin.com/in/banuelosangel/" target="_blank" rel="noopener">
+      <span class="linkedin-icon" aria-label="LinkedIn">in</span>
+      <div class="team-avatar"><img src="img/angel.jpg" alt="Angel Bañuelos"/></div>
+      <h4>Angel Bañuelos</h4>
+      <div class="role"><span class="ent">Co-founder</span><span class="est">Co-fundador</span></div>
+      <p>
+        <span class="ent">Tech leader in Mexico &amp; serial entrepreneur. Bridge-builder between LATAM and Silicon Valley innovation networks.</span>
+        <span class="est">Líder tecnológico en México y emprendedor serial. Tejedor de puentes entre LATAM y las redes de innovación de Silicon Valley.</span>
+      </p>
+    </a>
+    <a class="team-member" data-c="2" href="https://www.linkedin.com/in/fernando-fonseca-b16542129/" target="_blank" rel="noopener">
+      <span class="linkedin-icon" aria-label="LinkedIn">in</span>
+      <div class="team-avatar"><img src="img/fernando.jpg" alt="Fernando Fonseca"/></div>
+      <h4>Fernando Fonseca</h4>
+      <div class="role"><span class="ent">Co-founder</span><span class="est">Co-fundador</span></div>
+      <p>
+        <span class="ent">Cross-border venture &amp; ecosystem development across Mexico and the U.S.</span>
+        <span class="est">Desarrollo de ecosistemas y venture transfronterizo entre México y EE.UU.</span>
+      </p>
+    </a>
+    <a class="team-member" data-c="3" href="https://www.linkedin.com/in/samuelhernandezstanford/" target="_blank" rel="noopener">
+      <span class="linkedin-icon" aria-label="LinkedIn">in</span>
+      <div class="team-avatar"><img src="img/samuel.jpg" alt="Samuel Hernandez"/></div>
+      <h4>Samuel Hernandez</h4>
+      <div class="role"><span class="ent">Strategic Affairs</span><span class="est">Asuntos Estratégicos</span></div>
+      <p>
+        <span class="ent">Former Consul for Economic Affairs · 20+ trade missions · capital &amp; networks access.</span>
+        <span class="est">Ex Cónsul para Asuntos Económicos · 20+ misiones comerciales · acceso a capital y redes.</span>
+      </p>
+    </a>
+    <a class="team-member" data-c="4" href="https://www.linkedin.com/in/israelgarciab/" target="_blank" rel="noopener">
+      <span class="linkedin-icon" aria-label="LinkedIn">in</span>
+      <div class="team-avatar"><img src="img/israel.jpg" alt="Israel García B."/></div>
+      <h4>Israel García B.</h4>
+      <div class="role"><span class="ent">Ecosystem Lead</span><span class="est">Líder de Ecosistema</span></div>
+      <p>
+        <span class="ent">Former project lead at Balero Ventures · 8+ years in LATAM early-stage ecosystem.</span>
+        <span class="est">Ex project lead en Balero Ventures · 8+ años en early-stage LATAM.</span>
+      </p>
+    </a>
+    <a class="team-member" data-c="5" href="https://www.linkedin.com/in/alfonso-burgos-vega-83abaaa2/" target="_blank" rel="noopener">
+      <span class="linkedin-icon" aria-label="LinkedIn">in</span>
+      <div class="team-avatar"><img src="img/alfonso.jpg" alt="Alfonso Burgos"/></div>
+      <h4>Alfonso Burgos</h4>
+      <div class="role"><span class="ent">Partnerships</span><span class="est">Alianzas</span></div>
+      <p>
+        <span class="ent">Strategic partnerships across institutional, academic and corporate stakeholders.</span>
+        <span class="est">Alianzas estratégicas con stakeholders institucionales, académicos y corporativos.</span>
+      </p>
+    </a>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="connect">
+  <div class="cta-box">
+    <h2>
+      <span class="ent">Be part of the <em>flagship</em>.</span>
+      <span class="est">Forma parte del <em>flagship</em>.</span>
+    </h2>
+    <p>
+      <span class="ent">Whether you're a startup, corporate, agency, investor, university or service provider — there's a clear way to engage the Hub and capture value.</span>
+      <span class="est">Ya seas startup, corporativo, agencia, inversionista, universidad o proveedor de servicios — hay una forma clara de participar y capturar valor.</span>
+    </p>
+    <div class="cta-buttons">
+      <a href="mailto:hub@gdlxsjc.org" class="btn btn-orange">
+        <span class="ent">Schedule a call</span>
+        <span class="est">Agendar una llamada</span>
+        <span class="btn-arrow">→</span>
+      </a>
+      <a href="index.html" class="btn btn-secondary">
+        <span class="ent">← Back to corridor</span>
+        <span class="est">← Volver al corredor</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div>
+      <div class="foot-brand">
+        <span class="foot-brand-mark"></span>
+        <span class="foot-brand-text">
+          Innovation Hub
+          <small>Sister Cities <span class="x">×</span> Downtown San Jose</small>
+        </span>
+      </div>
+      <p class="foot-tag">
+        <span class="ent">A physical gateway to global innovation — and Downtown San Jose revitalization.</span>
+        <span class="est">Una puerta física hacia la innovación global — y la revitalización del centro de San José.</span>
+      </p>
+    </div>
+    <div class="foot-col">
+      <h5><span class="ent">Hub</span><span class="est">Hub</span></h5>
+      <ul>
+        <li><a href="#vision"><span class="ent">Vision</span><span class="est">Visión</span></a></li>
+        <li><a href="#pillars"><span class="ent">Pillars</span><span class="est">Pilares</span></a></li>
+        <li><a href="#ecosystem"><span class="ent">Ecosystem</span><span class="est">Ecosistema</span></a></li>
+        <li><a href="#roadmap"><span class="ent">Roadmap</span><span class="est">Hoja de ruta</span></a></li>
+        <li><a href="#team"><span class="ent">Team</span><span class="est">Equipo</span></a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5><span class="ent">Corridor</span><span class="est">Corredor</span></h5>
+      <ul>
+        <li><a href="index.html"><span class="ent">Overview</span><span class="est">Resumen</span></a></li>
+        <li><a href="index.html#opportunity"><span class="ent">Opportunity</span><span class="est">Oportunidad</span></a></li>
+        <li><a href="index.html#culture"><span class="ent">Culture</span><span class="est">Cultura</span></a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Connect</h5>
+      <ul>
+        <li><a href="mailto:hub@gdlxsjc.org">hub@gdlxsjc.org</a></li>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">Newsletter</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div>© 2026 Sister Cities Innovation Hub · Downtown San Jose</div>
+    <div>
+      <span class="ent">A bridge, by design</span>
+      <span class="est">Un puente, por diseño</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const setLang = (lang) => {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('.lang-toggle button').forEach(b => {
+      b.classList.toggle('active', b.dataset.setLang === lang);
+    });
+    try { localStorage.setItem('lang', lang); } catch(e) {}
+  };
+  document.querySelectorAll('.lang-toggle button').forEach(b => {
+    b.addEventListener('click', () => setLang(b.dataset.setLang));
+  });
+  try {
+    const saved = localStorage.getItem('lang');
+    if (saved) setLang(saved);
+  } catch(e) {}
+</script>
+
+</body>
+</html>

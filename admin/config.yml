@@ -1,0 +1,61 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Carpeta donde el CMS sube las imágenes en el repo
+media_folder: "img/gallery"
+# Path público que se escribe en el JSON
+public_folder: "img/gallery"
+
+# UX: español como idioma del CMS
+locale: "es"
+
+# Logo y branding del admin
+logo_url: /img/logo.png
+site_url: /
+
+collections:
+  - name: "gallery"
+    label: "📷 Galería"
+    label_singular: "Configuración de galería"
+    description: "Administra las fotos que aparecen en la sección de galería del sitio."
+    files:
+      - file: "gallery.json"
+        label: "Fotos de la galería"
+        name: "photos"
+        editor:
+          preview: false
+        fields:
+          - label: "Fotos"
+            name: "photos"
+            label_singular: "Foto"
+            widget: "list"
+            summary: "{{fields.category}} — {{fields.caption_es}}"
+            fields:
+              - { label: "📷 Imagen", name: "src", widget: "image" }
+              - label: "Categoría"
+                name: "category"
+                widget: "select"
+                default: "cultura"
+                options:
+                  - { label: "Firma del hermanamiento — Signing ceremony", value: "firma" }
+                  - { label: "Visitas de gobierno — Government visits", value: "gobierno" }
+                  - { label: "Encuentros de negocios — Business meetings", value: "negocios" }
+                  - { label: "Cultura — Culture", value: "cultura" }
+                  - { label: "Eye opening — Eye opening", value: "eye-opening" }
+              - label: "Descripción en español"
+                name: "caption_es"
+                widget: "string"
+                hint: "Ej: Firma del hermanamiento, marzo 2014, Guadalajara"
+              - label: "Description in English"
+                name: "caption_en"
+                widget: "string"
+                hint: "Ex: Sister cities signing, March 2014, Guadalajara"
+              - label: "Fecha (opcional)"
+                name: "date"
+                widget: "datetime"
+                required: false
+                hint: "Si la pones, las fotos se ordenan por fecha (más recientes primero)"
+                date_format: "YYYY-MM-DD"
+                time_format: false
+                format: "YYYY-MM-DD"

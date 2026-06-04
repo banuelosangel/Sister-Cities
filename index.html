@@ -1,0 +1,2667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Guadalajara × San Jose — Sister Cities Innovation Corridor</title>
+<link rel="icon" type="image/png" href="img/favicon.png">
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f5f1ea;              /* warm off-white */
+    --bg-card: #ffffff;
+    --bg-soft: #ede7dc;          /* warm tan */
+    --ink: #0d2330;              /* deep navy */
+    --ink-2: #1a3845;            /* secondary navy */
+    --ink-dim: #5a6770;
+    --ink-mute: #8a929a;
+    --line: rgba(13, 35, 48, 0.08);
+    --line-hi: rgba(13, 35, 48, 0.15);
+
+    --agave: #1f7a8c;            /* aqua agave (institutional) */
+    --agave-deep: #135866;
+    --agave-soft: #d9eaee;
+    --orange: #d9621f;           /* tequila orange */
+    --orange-soft: #f3d9c8;
+    --gold: #c89942;             /* warm accent */
+
+    --radius: 14px;
+    --radius-lg: 24px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter Tight', -apple-system, system-ui, sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+
+  /* ============ NAV ============ */
+  nav.top {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    background: rgba(245, 241, 234, 0.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--line);
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  .logo img {
+    height: 72px;
+    width: auto;
+    display: block;
+  }
+  .nav-links {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+  }
+  .nav-links a {
+    color: var(--ink-2);
+    text-decoration: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.2s;
+  }
+  .nav-links a:hover { color: var(--ink); background: rgba(13,35,48,0.04); }
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .lang-toggle {
+    display: flex;
+    background: rgba(13,35,48,0.04);
+    border-radius: 8px;
+    padding: 3px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+  }
+  .lang-toggle button {
+    background: none;
+    border: 0;
+    color: var(--ink-dim);
+    padding: 5px 9px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.2s;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  .lang-toggle button.active {
+    background: var(--ink);
+    color: var(--bg);
+  }
+  .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--ink);
+    color: var(--bg);
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.2s;
+  }
+  .nav-cta:hover { background: var(--agave-deep); }
+
+  /* ============ HERO ============ */
+  .hero {
+    padding: 90px 40px 100px;
+    max-width: 1320px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 12px 6px 6px;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    font-size: 12px;
+    color: var(--ink-2);
+    margin-bottom: 28px;
+    font-weight: 500;
+  }
+  .hero-badge .dot {
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: var(--agave);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+  }
+  .hero-badge .sep {
+    color: var(--ink-mute);
+    margin: 0 2px;
+  }
+
+  h1.hero-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(46px, 6.5vw, 88px);
+    font-weight: 400;
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+    margin-bottom: 28px;
+    color: var(--ink);
+  }
+  h1.hero-title em {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--agave-deep);
+  }
+
+  .hero-sub {
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--ink-dim);
+    margin-bottom: 36px;
+    max-width: 540px;
+  }
+  .hero-sub strong { color: var(--ink); font-weight: 600; }
+
+  .hero-cta {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 22px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .btn-primary {
+    background: var(--ink);
+    color: var(--bg);
+  }
+  .btn-primary:hover { background: var(--agave-deep); transform: translateY(-1px); }
+  .btn-secondary {
+    background: transparent;
+    color: var(--ink);
+    border-color: var(--line-hi);
+  }
+  .btn-secondary:hover { background: var(--bg-card); border-color: var(--ink); }
+  .btn-orange {
+    background: var(--orange);
+    color: white;
+  }
+  .btn-orange:hover { background: #b8511a; transform: translateY(-1px); }
+  .btn-arrow {
+    display: inline-block;
+    transition: transform 0.2s;
+  }
+  .btn:hover .btn-arrow { transform: translateX(3px); }
+
+  /* Hero visual: two-city photo stack */
+  .hero-visual {
+    position: relative;
+    aspect-ratio: 1 / 1.05;
+    width: 100%;
+  }
+  .city-stack {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 14px;
+  }
+  .city-photo {
+    border-radius: var(--radius);
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 20px 40px -20px rgba(13, 35, 48, 0.25);
+    background: var(--bg-soft);
+  }
+  .city-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+  }
+  .city-photo:hover img { transform: scale(1.05); }
+  .city-photo .city-tag {
+    position: absolute;
+    bottom: 12px; left: 12px;
+    background: rgba(13, 35, 48, 0.85);
+    backdrop-filter: blur(8px);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 100px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+  }
+  .city-photo.gdl-1 { grid-column: 1; grid-row: 1 / 3; }
+  .city-photo.sjc-1 { grid-column: 2; grid-row: 1; }
+  .city-photo.metric-card {
+    grid-column: 2;
+    grid-row: 2;
+    background: #050510;
+    color: white;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+  .metric-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 40%, rgba(31, 122, 140, 0.35), transparent 70%);
+    pointer-events: none;
+  }
+  .metric-card > * { position: relative; z-index: 1; }
+  .mc-logo-mark {
+    flex: 1;
+    background-image: url('img/logo-mark.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 0;
+    margin: 4px 0;
+  }
+  .mc-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: rgba(255,255,255,0.65);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+  .mc-cities {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: rgba(255,255,255,0.7);
+    padding-top: 8px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .mc-cities .x { color: var(--orange); }
+
+  /* ============ TWO CITIES (full photo) ============ */
+  .twocities {
+    padding: 110px 40px;
+    max-width: 1320px;
+    margin: 0 auto;
+  }
+  .tc-header {
+    margin-bottom: 56px;
+  }
+  .tc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .tc-card {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    transition: all 0.3s;
+  }
+  .tc-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 48px -24px rgba(13, 35, 48, 0.2);
+  }
+  .tc-photo {
+    aspect-ratio: 16 / 9;
+    position: relative;
+    overflow: hidden;
+  }
+  .tc-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.7s ease;
+  }
+  .tc-card:hover .tc-photo img { transform: scale(1.04); }
+  .tc-photo::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(13, 35, 48, 0.55) 100%);
+    pointer-events: none;
+  }
+  .tc-photo-label {
+    position: absolute;
+    bottom: 18px; left: 22px;
+    z-index: 2;
+    color: white;
+  }
+  .tc-photo-label .name {
+    font-family: 'Fraunces', serif;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 4px;
+  }
+  .tc-photo-label .meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.85);
+  }
+  .tc-body {
+    padding: 28px 28px 32px;
+  }
+  .tc-tagline {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    color: var(--ink);
+    letter-spacing: -0.015em;
+  }
+  .tc-card.gdl .tc-tagline { color: var(--orange); }
+  .tc-card.sjc .tc-tagline { color: var(--agave-deep); }
+
+  .tc-desc {
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--ink-dim);
+    margin-bottom: 24px;
+  }
+  .tc-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  .tc-stat-num {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1;
+    color: var(--ink);
+    letter-spacing: -0.015em;
+    margin-bottom: 4px;
+  }
+  .tc-stat-lbl {
+    font-size: 11px;
+    color: var(--ink-dim);
+    line-height: 1.3;
+  }
+
+  /* ============ HUMANS / TALENT ============ */
+  .humans-band {
+    background: var(--bg-soft);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .humans-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 14px;
+    margin-top: 24px;
+    aspect-ratio: 3 / 1.4;
+    max-height: 540px;
+  }
+  .human-tile {
+    border-radius: var(--radius);
+    overflow: hidden;
+    position: relative;
+    background: var(--bg-card);
+    box-shadow: 0 12px 24px -16px rgba(13, 35, 48, 0.15);
+  }
+  .human-tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+  }
+  .human-tile:hover img { transform: scale(1.05); }
+  .human-tile::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 40%, rgba(13, 35, 48, 0.7) 100%);
+    pointer-events: none;
+  }
+  .human-tile .h-label {
+    position: absolute;
+    bottom: 16px; left: 18px;
+    right: 18px;
+    z-index: 2;
+    color: white;
+  }
+  .human-tile .h-tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: rgba(217, 98, 31, 0.95);
+    padding: 4px 9px;
+    border-radius: 100px;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  .human-tile .h-tag.aqua { background: rgba(31, 122, 140, 0.95); }
+  .human-tile .h-text {
+    font-family: 'Fraunces', serif;
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+  .human-tile.h-big {
+    grid-column: 1;
+    grid-row: 1 / 3;
+  }
+  .human-tile.h-big .h-text { font-size: 24px; }
+  .human-tile.h-quote {
+    background: var(--ink);
+    color: white;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .human-tile.h-quote::after { display: none; }
+  .h-quote-text {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    font-style: italic;
+    line-height: 1.35;
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
+  }
+  .h-quote-text::before {
+    content: '"';
+    display: block;
+    font-size: 40px;
+    line-height: 0.4;
+    color: var(--orange);
+    margin-bottom: 12px;
+  }
+  .h-quote-attr {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.65);
+  }
+  .trusted {
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 32px 0;
+    background: var(--bg-soft);
+  }
+  .trusted-inner {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    gap: 48px;
+  }
+  .trusted-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-dim);
+    flex-shrink: 0;
+    max-width: 180px;
+  }
+  .marquee {
+    flex: 1;
+    overflow: hidden;
+    mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+  }
+  .marquee-track {
+    display: flex;
+    gap: 48px;
+    animation: scroll 40s linear infinite;
+    width: max-content;
+    align-items: center;
+  }
+  @keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .partner-name {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--ink-2);
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+    opacity: 0.65;
+    transition: opacity 0.3s;
+  }
+  .partner-name:hover { opacity: 1; }
+
+  /* ============ SECTIONS ============ */
+  section {
+    padding: 110px 40px;
+    max-width: 1320px;
+    margin: 0 auto;
+  }
+  section.full {
+    max-width: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  section.full > .inner {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--agave-deep);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--agave);
+    border-radius: 50%;
+  }
+  .eyebrow.orange { color: var(--orange); }
+  .eyebrow.orange::before { background: var(--orange); }
+
+  h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(36px, 4.5vw, 56px);
+    font-weight: 400;
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    margin-bottom: 20px;
+    max-width: 880px;
+    color: var(--ink);
+  }
+  h2 em {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--agave-deep);
+  }
+  .section-intro {
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--ink-dim);
+    max-width: 640px;
+    margin-bottom: 64px;
+  }
+
+  /* ============ OPPORTUNITY / STATS ============ */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--bg-card);
+  }
+  .stat-card {
+    padding: 32px 28px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    transition: background 0.2s;
+  }
+  .stat-card:nth-child(4n) { border-right: none; }
+  .stat-card:nth-last-child(-n+4) { border-bottom: none; }
+  .stat-card:hover { background: var(--bg-soft); }
+  .stat-num {
+    font-family: 'Fraunces', serif;
+    font-size: 52px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    margin-bottom: 12px;
+    color: var(--ink);
+  }
+  .stat-num em {
+    font-style: italic;
+    color: var(--agave-deep);
+  }
+  .stat-label {
+    font-size: 14px;
+    color: var(--ink-dim);
+    line-height: 1.45;
+    margin-bottom: 14px;
+  }
+  .stat-source {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+  }
+
+  /* ============ TWO-WAY VALUE ============ */
+  .twoway-section {
+    background: var(--ink);
+    color: var(--bg);
+  }
+  .twoway-section .eyebrow { color: #7fc7d4; }
+  .twoway-section .eyebrow::before { background: #7fc7d4; }
+  .twoway-section h2 { color: var(--bg); }
+  .twoway-section h2 em { color: #ff9a55; }
+  .twoway-section .section-intro { color: rgba(245,241,234,0.7); }
+
+  .twoway-header { text-align: center; }
+  .twoway-header h2,
+  .twoway-header .section-intro { margin-left: auto; margin-right: auto; }
+
+  .twoway-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 24px;
+  }
+
+  .flow-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius-lg);
+    padding: 40px 36px;
+    transition: all 0.3s;
+  }
+  .flow-card:hover {
+    border-color: rgba(255,255,255,0.18);
+    background: rgba(255,255,255,0.05);
+  }
+  .flow-direction {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
+    color: rgba(245,241,234,0.7);
+  }
+  .flow-card.gdl .flow-direction .arr { color: var(--orange); }
+  .flow-card.sjc .flow-direction .arr { color: #7fc7d4; }
+
+  .flow-title {
+    font-family: 'Fraunces', serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+  }
+  .flow-title em {
+    font-style: italic;
+    font-weight: 500;
+  }
+  .flow-card.gdl .flow-title em { color: #ff9a55; }
+  .flow-card.sjc .flow-title em { color: #7fc7d4; }
+
+  .flow-points { list-style: none; }
+  .flow-points li {
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 14px;
+  }
+  .flow-points li:last-child { border-bottom: 0; padding-bottom: 0; }
+  .flow-points li:first-child { padding-top: 0; }
+  .flow-points .pt-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: rgba(245,241,234,0.45);
+    padding-top: 3px;
+  }
+  .flow-points .pt-body {
+    font-size: 15.5px;
+    line-height: 1.55;
+    color: rgba(245,241,234,0.85);
+  }
+  .flow-points .pt-body strong {
+    color: var(--bg);
+    font-weight: 600;
+  }
+
+  /* ============ HUB SPOTLIGHT ============ */
+  .hub-section {
+    padding: 110px 40px;
+    background: var(--bg);
+  }
+  .hub-spotlight {
+    max-width: 1320px;
+    margin: 0 auto;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 56px 56px 56px 56px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 56px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hub-flag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    background: var(--orange-soft);
+    border-radius: 100px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--orange);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 22px;
+    font-weight: 600;
+  }
+  .hub-spotlight h3 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(32px, 4vw, 46px);
+    font-weight: 400;
+    line-height: 1.04;
+    letter-spacing: -0.025em;
+    margin-bottom: 20px;
+  }
+  .hub-spotlight h3 em {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--agave-deep);
+  }
+  .hub-spotlight > div:first-child > p {
+    color: var(--ink-dim);
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 28px;
+  }
+  .hub-bullets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+  .hub-bullet {
+    font-size: 13px;
+    padding: 6px 12px;
+    background: var(--bg-soft);
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    color: var(--ink-2);
+    font-weight: 500;
+  }
+
+  /* Hub visual */
+  .hub-visual {
+    background: linear-gradient(155deg, var(--ink) 0%, var(--ink-2) 60%, var(--agave-deep) 100%);
+    border-radius: var(--radius);
+    padding: 36px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .hub-visual::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 70% 30%, rgba(217, 98, 31, 0.2), transparent 40%),
+      radial-gradient(circle at 20% 80%, rgba(127, 199, 212, 0.15), transparent 50%);
+    pointer-events: none;
+  }
+  .hub-visual::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .hub-vh, .hub-vb, .hub-vf { position: relative; z-index: 1; }
+  .hub-vh {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .hub-vh .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.7);
+  }
+  .hub-vh .pin {
+    width: 32px; height: 32px;
+    background: var(--orange);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+  }
+  .hub-vb {
+    margin: 24px 0;
+  }
+  .hub-vb h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 28px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.05;
+    margin-bottom: 8px;
+  }
+  .hub-vb p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.5;
+  }
+  .hub-vf {
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .hub-vf .vf-num {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    line-height: 1;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .hub-vf .vf-lbl {
+    font-size: 11px;
+    color: rgba(255,255,255,0.65);
+  }
+
+  /* ============ AUDIENCES ============ */
+  .audiences-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .aud-card {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 32px 28px;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+  }
+  .aud-card:hover {
+    border-color: var(--ink);
+    transform: translateY(-2px);
+    box-shadow: 0 20px 40px -20px rgba(13, 35, 48, 0.15);
+  }
+  .aud-icon {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    background: var(--agave-soft);
+    color: var(--agave-deep);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .aud-card[data-c="2"] .aud-icon { background: var(--orange-soft); color: var(--orange); }
+  .aud-card[data-c="3"] .aud-icon { background: var(--bg-soft); color: var(--ink); }
+  .aud-card[data-c="4"] .aud-icon { background: var(--agave-soft); color: var(--agave-deep); }
+  .aud-card[data-c="5"] .aud-icon { background: var(--orange-soft); color: var(--orange); }
+  .aud-card[data-c="6"] .aud-icon { background: var(--bg-soft); color: var(--ink); }
+
+  .aud-card h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.15;
+    margin-bottom: 12px;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+  }
+  .aud-card p {
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--ink-dim);
+    flex-grow: 1;
+    margin-bottom: 20px;
+  }
+  .aud-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink-mute);
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+  }
+
+  /* ============ CULTURE ============ */
+  .cultural-band {
+    background: var(--bg-soft);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .cultural-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .cultural-card {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+  }
+  .cultural-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -20px rgba(13, 35, 48, 0.18);
+  }
+  .cultural-photo {
+    aspect-ratio: 16 / 10;
+    position: relative;
+    overflow: hidden;
+  }
+  .cultural-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+  }
+  .cultural-card:hover .cultural-photo img { transform: scale(1.05); }
+  .cultural-photo::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(13,35,48,0.0) 50%, rgba(13,35,48,0.4) 100%);
+    pointer-events: none;
+  }
+  .cultural-when {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    border-radius: 10px;
+    padding: 8px 12px;
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--orange);
+    line-height: 1;
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .cultural-when small {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    font-style: normal;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+  }
+  .cultural-body {
+    padding: 24px 24px 28px;
+  }
+  .cultural-card h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.15;
+    margin-bottom: 10px;
+    letter-spacing: -0.015em;
+  }
+  .cultural-card p {
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--ink-dim);
+  }
+
+  /* ============ CTA ============ */
+  .cta-section {
+    padding: 130px 40px;
+    text-align: center;
+  }
+  .cta-box {
+    max-width: 920px;
+    margin: 0 auto;
+    background: var(--ink);
+    color: var(--bg);
+    border-radius: var(--radius-lg);
+    padding: 72px 56px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-box::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 0% 100%, rgba(31, 122, 140, 0.4), transparent 50%),
+      radial-gradient(ellipse at 100% 0%, rgba(217, 98, 31, 0.25), transparent 50%);
+    pointer-events: none;
+  }
+  .cta-box > * { position: relative; z-index: 1; }
+  .cta-box h2 {
+    margin: 0 auto 16px;
+    color: var(--bg);
+  }
+  .cta-box h2 em { color: #ff9a55; }
+  .cta-box p {
+    color: rgba(245, 241, 234, 0.75);
+    font-size: 18px;
+    margin: 0 auto 36px;
+    max-width: 580px;
+  }
+  .cta-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .cta-box .btn-secondary {
+    background: rgba(255,255,255,0.06);
+    color: var(--bg);
+    border-color: rgba(255,255,255,0.15);
+  }
+  .cta-box .btn-secondary:hover {
+    background: rgba(255,255,255,0.12);
+    border-color: rgba(255,255,255,0.3);
+  }
+
+  /* ============ FOOTER ============ */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 64px 40px 32px;
+    background: var(--bg);
+  }
+  .foot-grid {
+    max-width: 1320px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--line);
+  }
+  .foot-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+  .foot-brand-mark {
+    width: 96px;
+    height: 64px;
+    background-image: url('img/logo-mark.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    flex-shrink: 0;
+  }
+  .foot-brand-text {
+    font-family: 'Fraunces', serif;
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+  }
+  .foot-brand-text small {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-mute);
+    margin-top: 5px;
+    font-weight: 500;
+  }
+  .foot-brand-text .x {
+    color: var(--orange);
+    font-style: italic;
+    font-weight: 400;
+  }
+  .foot-tag {
+    color: var(--ink-dim);
+    font-size: 14.5px;
+    line-height: 1.55;
+    max-width: 320px;
+  }
+  .foot-col h5 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-mute);
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+  .foot-col ul { list-style: none; }
+  .foot-col li { margin-bottom: 8px; }
+  .foot-col a {
+    color: var(--ink-2);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+  }
+  .foot-col a:hover { color: var(--orange); }
+  .foot-bottom {
+    max-width: 1320px;
+    margin: 28px auto 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-mute);
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  /* ============ I18N ============ */
+  [data-lang="es"] { display: none; }
+  html[lang="es"] [data-lang="en"] { display: none; }
+  html[lang="es"] [data-lang="es"] { display: inline; }
+  .ent, .est { display: inline; }
+  html[lang="es"] .ent { display: none; }
+  html:not([lang="es"]) .est { display: none; }
+
+  /* ============ RESPONSIVE TABLETS / PHONES MEDIANOS ============ */
+  @media (max-width: 980px) {
+    nav.top { padding: 10px 20px; }
+    .nav-links { display: none; }
+    .logo img { height: 52px; }
+    .hero { padding: 50px 20px 70px; grid-template-columns: 1fr; gap: 40px; }
+    .hero-visual { max-width: 460px; }
+    section, .hub-section { padding: 70px 20px; }
+    section.full > .inner { padding: 0 20px; }
+    .trusted-inner { padding: 0 20px; flex-direction: column; gap: 16px; align-items: flex-start; }
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+    .stat-card { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .stat-card:nth-child(2n) { border-right: none; }
+    .stat-card:last-child { border-bottom: none; }
+    .stat-card:nth-last-child(2):nth-child(odd) { border-bottom: none; }
+    .twoway-grid { grid-template-columns: 1fr; }
+    .hub-spotlight { grid-template-columns: 1fr; padding: 40px 28px; gap: 32px; }
+    .audiences-grid { grid-template-columns: 1fr; }
+    .cultural-grid { grid-template-columns: 1fr; }
+    .cultural-card { grid-template-columns: 1fr; gap: 12px; }
+    .tc-grid { grid-template-columns: 1fr; gap: 16px; }
+    .twocities { padding: 70px 20px; }
+    .humans-grid {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(3, 1fr);
+      aspect-ratio: auto;
+      max-height: none;
+      height: auto;
+    }
+    .human-tile { aspect-ratio: 4/3; }
+    .human-tile.h-big { grid-column: 1 / 3; grid-row: 1; }
+    .human-tile.h-quote { aspect-ratio: auto; min-height: 180px; }
+    .cta-section { padding: 80px 20px; }
+    .cta-box { padding: 48px 28px; }
+    .foot-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .footer { padding: 50px 20px 24px; }
+    .foot-bottom { flex-direction: column; text-align: center; }
+
+    /* gallery responsive */
+    .gallery-section { padding: 70px 20px 80px; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .gallery-tabs {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      padding-bottom: 10px;
+      margin-left: -20px;
+      margin-right: -20px;
+      padding-left: 20px;
+      padding-right: 20px;
+      scrollbar-width: none;
+    }
+    .gallery-tabs::-webkit-scrollbar { display: none; }
+    .gallery-tab { flex-shrink: 0; }
+    .lb-close { top: 16px; right: 16px; width: 38px; height: 38px; }
+    .lb-nav { width: 42px; height: 42px; font-size: 26px; }
+    .lb-prev { left: 12px; }
+    .lb-next { right: 12px; }
+    .lb-stage { max-width: 95vw; max-height: 70vh; }
+    .lb-stage img { max-height: 70vh; }
+    .lb-meta { bottom: 16px; }
+    .lb-caption { font-size: 14px; }
+    .lightbox { padding: 20px; }
+  }
+
+  /* ============ RESPONSIVE PHONES (≤ 600px) ============ */
+  @media (max-width: 600px) {
+    /* Typography down-scaling */
+    h1.hero-title { font-size: 38px; letter-spacing: -0.025em; line-height: 1.02; margin-bottom: 22px; }
+    h2 { font-size: 30px; line-height: 1.08; margin-bottom: 16px; }
+    .hero-sub { font-size: 16px; margin-bottom: 28px; }
+    .section-intro, .section-lead { font-size: 16px; line-height: 1.5; }
+
+    /* Nav */
+    nav.top { padding: 9px 16px; }
+    .logo img { height: 44px; }
+    .nav-cta { padding: 9px 14px; font-size: 13px; }
+    .lang-toggle button { padding: 6px 9px; font-size: 11px; }
+
+    /* Sections */
+    section, .hub-section { padding: 56px 18px; }
+    section.full > .inner { padding: 0 18px; }
+    .hero { padding: 36px 18px 56px; gap: 32px; }
+    .twocities { padding: 56px 18px; }
+
+    /* Hero CTAs full width */
+    .hero-cta { flex-direction: column; align-items: stretch; }
+    .hero-cta .btn { justify-content: center; padding: 14px 18px; }
+
+    /* Section header */
+    .section-head { margin-bottom: 32px; }
+    .kicker { font-size: 10px; }
+
+    /* Stats: keep 2 cols but compact */
+    .stat-card { padding: 22px 16px; }
+    .stat-num { font-size: 32px !important; }
+    .stat-label { font-size: 12px; }
+    .stat-detail { font-size: 12.5px; }
+
+    /* Audience cards single col already */
+    .audience-card { padding: 28px 22px; }
+
+    /* Humans mosaic: stack all */
+    .humans-grid { grid-template-columns: 1fr; grid-template-rows: auto; gap: 8px; }
+    .human-tile.h-big { grid-column: auto; }
+    .human-tile { aspect-ratio: 4/3; }
+    .human-tile.h-quote { aspect-ratio: auto; min-height: 140px; }
+    .human-tile.h-big .h-text { font-size: 20px; }
+
+    /* Cultural cards */
+    .cultural-card { padding: 0; }
+    .cultural-content { padding: 22px 20px; }
+
+    /* Two Cities cards */
+    .tc-card { border-radius: var(--radius); }
+    .tc-content { padding: 24px 20px; }
+    .tc-content h3 { font-size: 22px; }
+
+    /* Twoway dark */
+    .twoway-card { padding: 26px 22px; }
+
+    /* Hub spotlight */
+    .hub-spotlight { padding: 32px 22px; }
+    .hub-spotlight h3 { font-size: 26px; }
+
+    /* CTA */
+    .cta-section { padding: 60px 18px; }
+    .cta-box { padding: 36px 22px; }
+    .cta-box h2 { font-size: 28px; }
+    .cta-actions { flex-direction: column; align-items: stretch; }
+    .cta-actions .btn { justify-content: center; }
+
+    /* Footer */
+    .foot-grid { grid-template-columns: 1fr; gap: 28px; }
+    .footer { padding: 40px 18px 20px; }
+    .foot-brand-mark { width: 72px; height: 48px; }
+    .foot-brand-text { font-size: 22px; }
+
+    /* Gallery: 2 cols tight on phones */
+    .gallery-section { padding: 56px 18px 64px; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .gallery-tile .gt-tag { font-size: 8px; padding: 4px 7px; bottom: 6px; left: 6px; }
+    .gallery-tabs { margin-left: -18px; margin-right: -18px; padding-left: 18px; padding-right: 18px; }
+    .gallery-tab { padding: 9px 14px; font-size: 12px; }
+
+    /* Lightbox tighter */
+    .lb-meta { bottom: 14px; max-width: 92%; }
+    .lb-caption { font-size: 13px; }
+    .lb-close { width: 36px; height: 36px; font-size: 18px; top: 12px; right: 12px; }
+    .lb-nav { width: 38px; height: 38px; font-size: 22px; }
+    .lb-prev { left: 8px; }
+    .lb-next { right: 8px; }
+
+    /* Trusted band */
+    .trusted-band { padding: 22px 18px; }
+    .trusted-label { font-size: 10px; }
+    .partner-name { font-size: 14px; }
+  }  /* ============ GALLERY ============ */
+  .gallery-section {
+    padding: 100px 32px 110px;
+    background: var(--bg);
+  }
+  .gallery-section .section-head {
+    text-align: left;
+    max-width: 760px;
+    margin-bottom: 44px;
+  }
+  .gallery-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 32px;
+    padding-bottom: 4px;
+  }
+  .gallery-tab {
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    padding: 10px 18px;
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink-mute);
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: -0.005em;
+    white-space: nowrap;
+  }
+  .gallery-tab:hover {
+    border-color: var(--ink);
+    color: var(--ink);
+  }
+  .gallery-tab.active {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--bg);
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+  .gallery-tile {
+    position: relative;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    transition: all 0.3s;
+  }
+  .gallery-tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+    display: block;
+  }
+  .gallery-tile:hover {
+    border-color: var(--ink);
+    box-shadow: 0 16px 32px -16px rgba(13, 35, 48, 0.18);
+  }
+  .gallery-tile:hover img {
+    transform: scale(1.06);
+  }
+  .gallery-tile .gt-tag {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(13, 35, 48, 0.85);
+    color: white;
+    backdrop-filter: blur(8px);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 5px 9px;
+    border-radius: 4px;
+    opacity: 0;
+    transform: translateY(4px);
+    transition: all 0.25s;
+  }
+  .gallery-tile:hover .gt-tag {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .gallery-empty {
+    padding: 60px 40px;
+    text-align: center;
+    background: var(--bg-card);
+    border: 1px dashed var(--line);
+    border-radius: var(--radius);
+    color: var(--ink-mute);
+  }
+  .gallery-empty code {
+    background: var(--bg);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+  }
+
+  /* LIGHTBOX */
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(8, 14, 20, 0.96);
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    backdrop-filter: blur(12px);
+  }
+  .lightbox.open {
+    display: flex;
+    animation: lbFadeIn 0.3s ease;
+  }
+  @keyframes lbFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  .lb-stage {
+    max-width: 90vw;
+    max-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .lb-stage img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 6px;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+  }
+  .lb-close, .lb-nav {
+    position: absolute;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: white;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    backdrop-filter: blur(8px);
+  }
+  .lb-close:hover, .lb-nav:hover {
+    background: rgba(255,255,255,0.18);
+    border-color: rgba(255,255,255,0.3);
+  }
+  .lb-close {
+    top: 28px;
+    right: 28px;
+    width: 44px;
+    height: 44px;
+    font-size: 22px;
+    line-height: 1;
+  }
+  .lb-nav {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 52px;
+    height: 52px;
+    font-size: 32px;
+    line-height: 1;
+    font-family: 'Inter Tight', sans-serif;
+  }
+  .lb-prev { left: 28px; }
+  .lb-next { right: 28px; }
+  .lb-meta {
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    max-width: 80%;
+    text-align: center;
+  }
+  .lb-caption {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: rgba(255,255,255,0.95);
+    line-height: 1.4;
+  }
+  .lb-counter {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 0.1em;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="top">
+  <a href="index.html" class="logo" aria-label="Sister Cities Guadalajara × San Jose">
+    <img src="img/logo.png" alt="Sister Cities Guadalajara × San Jose"/>
+  </a>
+  <div class="nav-links">
+    <a href="#cities"><span class="ent">Cities</span><span class="est">Ciudades</span></a>
+    <a href="#opportunity"><span class="ent">Opportunity</span><span class="est">Oportunidad</span></a>
+    <a href="hub.html"><span class="ent">Innovation Hub</span><span class="est">Hub de Innovación</span></a>
+    <a href="#audiences"><span class="ent">For Whom</span><span class="est">Para quién</span></a>
+    <a href="#culture"><span class="ent">Culture</span><span class="est">Cultura</span></a>
+    <a href="#gallery"><span class="ent">Gallery</span><span class="est">Galería</span></a>
+  </div>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button class="active" data-set-lang="en">EN</button>
+      <button data-set-lang="es">ES</button>
+    </div>
+    <a href="#connect" class="nav-cta">
+      <span class="ent">Get involved</span><span class="est">Participar</span>
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div>
+    <div class="hero-badge">
+      <span class="dot">×</span>
+      <span class="ent">Sister Cities since 2014</span>
+      <span class="est">Ciudades Hermanas desde 2014</span>
+      <span class="sep">·</span>
+      <span class="ent">Active partnership</span>
+      <span class="est">Alianza activa</span>
+    </div>
+    <h1 class="hero-title">
+      <span class="ent">Where <em>two Silicon Valleys</em> connect — and grow together.</span>
+      <span class="est">Donde se conectan <em>dos Silicon Valleys</em> — y crecen juntos.</span>
+    </h1>
+    <p class="hero-sub">
+      <span class="ent">A bilateral corridor for <strong>investment, scale-ups and technical talent</strong> between Mexico's tech capital and the heart of Silicon Valley — and a gateway to a 650-million-consumer Latin American market.</span>
+      <span class="est">Un corredor bilateral para <strong>inversión, escalamiento de empresas y talento técnico</strong> entre la capital tecnológica de México y el corazón de Silicon Valley — y una puerta a un mercado latinoamericano de 650 millones de consumidores.</span>
+    </p>
+    <div class="hero-cta">
+      <a href="hub.html" class="btn btn-primary">
+        <span class="ent">Discover the Innovation Hub</span>
+        <span class="est">Conoce el Hub de Innovación</span>
+        <span class="btn-arrow">→</span>
+      </a>
+      <a href="#opportunity" class="btn btn-secondary">
+        <span class="ent">See the opportunity</span>
+        <span class="est">Ver la oportunidad</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="city-stack">
+      <div class="city-photo gdl-1">
+        <img src="img/gdl.webp" alt="Skyline de Puerta de Hierro y Andares, Zapopan — Guadalajara"/>
+        <span class="city-tag">Guadalajara · MX</span>
+      </div>
+      <div class="city-photo sjc-1">
+        <img src="img/sj.jpg" alt="San Jose, California — Silicon Valley"/>
+        <span class="city-tag">San Jose · US</span>
+      </div>
+      <div class="city-photo metric-card">
+        <div class="mc-eyebrow">
+          <span class="ent">— Sister Cities Innovation Corridor</span>
+          <span class="est">— Corredor de Innovación</span>
+        </div>
+        <div class="mc-logo-mark"></div>
+        <div class="mc-cities">
+          <span>GDL</span>
+          <span class="x">∞</span>
+          <span>SJC</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- TRUSTED -->
+<section class="trusted" style="padding: 32px 0; max-width:none;">
+  <div class="trusted-inner">
+    <div class="trusted-label">
+      <span class="ent">Already building<br>across the corridor</span>
+      <span class="est">Ya construyendo<br>en el corredor</span>
+    </div>
+    <div class="marquee">
+      <div class="marquee-track">
+        <span class="partner-name">Intel</span>
+        <span class="partner-name">Oracle</span>
+        <span class="partner-name">IBM</span>
+        <span class="partner-name">HP</span>
+        <span class="partner-name">Flex</span>
+        <span class="partner-name">ASE Group</span>
+        <span class="partner-name">Bosch</span>
+        <span class="partner-name">Foxconn</span>
+        <span class="partner-name">Wizeline</span>
+        <span class="partner-name">Jabil</span>
+        <span class="partner-name">Sanmina</span>
+        <span class="partner-name">Continental</span>
+        <span class="partner-name">Intel</span>
+        <span class="partner-name">Oracle</span>
+        <span class="partner-name">IBM</span>
+        <span class="partner-name">HP</span>
+        <span class="partner-name">Flex</span>
+        <span class="partner-name">ASE Group</span>
+        <span class="partner-name">Bosch</span>
+        <span class="partner-name">Foxconn</span>
+        <span class="partner-name">Wizeline</span>
+        <span class="partner-name">Jabil</span>
+        <span class="partner-name">Sanmina</span>
+        <span class="partner-name">Continental</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TWO CITIES -->
+<section class="twocities" id="cities">
+  <div class="tc-header">
+    <span class="eyebrow"><span class="ent">/ Two Cities</span><span class="est">/ Dos Ciudades</span></span>
+    <h2>
+      <span class="ent">Two ecosystems. <em>One corridor</em>.</span>
+      <span class="est">Dos ecosistemas. <em>Un corredor</em>.</span>
+    </h2>
+  </div>
+  <div class="tc-grid">
+    <div class="tc-card gdl">
+      <div class="tc-photo">
+        <img src="img/gdl.webp" alt="Skyline de Puerta de Hierro y Andares, Zapopan — Guadalajara"/>
+        <div class="tc-photo-label">
+          <div class="name">Guadalajara</div>
+          <div class="meta">Jalisco · México · 20.67° N</div>
+        </div>
+      </div>
+      <div class="tc-body">
+        <div class="tc-tagline">
+          <span class="ent">The Silicon Valley of Mexico.</span>
+          <span class="est">El Silicon Valley de México.</span>
+        </div>
+        <p class="tc-desc">
+          <span class="ent">Mexico's leading tech hub, home to one-third of the country's IT sector. A vibrant ecosystem of startups, R&amp;D centers and engineering talent rooted in Jalisco's culture of craft and innovation.</span>
+          <span class="est">El principal hub tecnológico de México, hogar de un tercio del sector de TI del país. Un ecosistema vibrante de startups, centros de I+D y talento de ingeniería arraigado en la cultura jalisciense de oficio e innovación.</span>
+        </p>
+        <div class="tc-stats">
+          <div>
+            <div class="tc-stat-num">1.42M</div>
+            <div class="tc-stat-lbl"><span class="ent">Population</span><span class="est">Población</span></div>
+          </div>
+          <div>
+            <div class="tc-stat-num">600+</div>
+            <div class="tc-stat-lbl"><span class="ent">Tech companies</span><span class="est">Empresas tech</span></div>
+          </div>
+          <div>
+            <div class="tc-stat-num">1542</div>
+            <div class="tc-stat-lbl"><span class="ent">Founded</span><span class="est">Fundada</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tc-card sjc">
+      <div class="tc-photo">
+        <img src="img/sj.jpg" alt="San Jose, California — Bay Area"/>
+        <div class="tc-photo-label">
+          <div class="name">San Jose</div>
+          <div class="meta">California · USA · 37.34° N</div>
+        </div>
+      </div>
+      <div class="tc-body">
+        <div class="tc-tagline">
+          <span class="ent">The capital of Silicon Valley.</span>
+          <span class="est">La capital de Silicon Valley.</span>
+        </div>
+        <p class="tc-desc">
+          <span class="ent">The civic heart of the world's most influential tech region. Home to global headquarters, top-tier capital, and one of the oldest international Sister City programs in the United States.</span>
+          <span class="est">El corazón cívico de la región tecnológica más influyente del mundo. Hogar de sedes globales, capital de primer nivel, y uno de los programas internacionales de Ciudades Hermanas más antiguos de EE.UU.</span>
+        </p>
+        <div class="tc-stats">
+          <div>
+            <div class="tc-stat-num">970K</div>
+            <div class="tc-stat-lbl"><span class="ent">Population</span><span class="est">Población</span></div>
+          </div>
+          <div>
+            <div class="tc-stat-num">6,600+</div>
+            <div class="tc-stat-lbl"><span class="ent">Tech companies</span><span class="est">Empresas tech</span></div>
+          </div>
+          <div>
+            <div class="tc-stat-num">1777</div>
+            <div class="tc-stat-lbl"><span class="ent">Founded</span><span class="est">Fundada</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OPPORTUNITY -->
+<section id="opportunity">
+  <span class="eyebrow"><span class="ent">/ The Opportunity</span><span class="est">/ La Oportunidad</span></span>
+  <h2>
+    <span class="ent">A corridor with <em>real momentum</em>.</span>
+    <span class="est">Un corredor con <em>impulso real</em>.</span>
+  </h2>
+  <p class="section-intro">
+    <span class="ent">The figures behind the relationship between Jalisco's tech ecosystem and Silicon Valley — a corridor that has stopped emerging and started compounding.</span>
+    <span class="est">Las cifras detrás de la relación entre el ecosistema tecnológico de Jalisco y Silicon Valley — un corredor que dejó de emerger y comenzó a multiplicarse.</span>
+  </p>
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-num">$<em>890</em>M</div>
+      <div class="stat-label">
+        <span class="ent">Silicon Valley investment announced in Jalisco in 2025</span>
+        <span class="est">Inversión de Silicon Valley anunciada en Jalisco en 2025</span>
+      </div>
+      <div class="stat-source">USD · 2025</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num"><em>70</em>%</div>
+      <div class="stat-label">
+        <span class="ent">Of all semiconductor companies in Mexico are based in Jalisco</span>
+        <span class="est">De las empresas de semiconductores en México están en Jalisco</span>
+      </div>
+      <div class="stat-source">Gob. de Jalisco</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">10K<em>+</em></div>
+      <div class="stat-label">
+        <span class="ent">Tech specialists graduating annually from Jalisco universities</span>
+        <span class="est">Especialistas tech graduados al año en universidades de Jalisco</span>
+      </div>
+      <div class="stat-source">UDG · Tec · ITESO</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">$<em>3.2</em>B</div>
+      <div class="stat-label">
+        <span class="ent">Annual bilateral trade between San Jose and Guadalajara</span>
+        <span class="est">Comercio bilateral anual entre San José y Guadalajara</span>
+      </div>
+      <div class="stat-source">
+        <span class="ent">USD · doubled since 2014</span>
+        <span class="est">USD · se duplicó desde 2014</span>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">600<em>+</em></div>
+      <div class="stat-label">
+        <span class="ent">Tech companies in Guadalajara — Mexico's largest IT hub</span>
+        <span class="est">Empresas tech en Guadalajara — el mayor hub de TI de México</span>
+      </div>
+      <div class="stat-source">
+        <span class="ent">23% of MX software</span>
+        <span class="est">23% del software de MX</span>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">~<em>2</em> hrs</div>
+      <div class="stat-label">
+        <span class="ent">Time-zone overlap and direct flights — real-time collaboration</span>
+        <span class="est">Diferencia horaria y vuelos directos — colaboración en tiempo real</span>
+      </div>
+      <div class="stat-source">PST ⇄ CST</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num"><em>650</em>M</div>
+      <div class="stat-label">
+        <span class="ent">Latin American consumers reachable through Guadalajara as a gateway</span>
+        <span class="est">Consumidores latinoamericanos alcanzables vía Guadalajara como puerta</span>
+      </div>
+      <div class="stat-source">LATAM</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num"><em>−65</em>%</div>
+      <div class="stat-label">
+        <span class="ent">Average engineering cost savings vs. Silicon Valley rates</span>
+        <span class="est">Ahorro promedio en costos de ingeniería vs. tarifas de Silicon Valley</span>
+      </div>
+      <div class="stat-source">Nearshoring</div>
+    </div>
+  </div>
+</section>
+
+<!-- TWO-WAY VALUE -->
+<section class="twoway-section full" id="twoway">
+  <div class="inner" style="padding-top: 110px; padding-bottom: 110px;">
+    <div class="twoway-header" style="text-align: center; margin-bottom: 60px;">
+      <span class="eyebrow"><span class="ent">/ Two-way Value</span><span class="est">/ Valor Bilateral</span></span>
+      <h2>
+        <span class="ent">Value flows in <em>both directions</em>.</span>
+        <span class="est">El valor fluye en <em>ambas direcciones</em>.</span>
+      </h2>
+      <p class="section-intro">
+        <span class="ent">Two ecosystems with complementary strengths. One corridor that connects them.</span>
+        <span class="est">Dos ecosistemas con fortalezas complementarias. Un corredor que los conecta.</span>
+      </p>
+    </div>
+
+    <div class="twoway-grid">
+      <div class="flow-card gdl">
+        <div class="flow-direction">
+          <span>Guadalajara</span>
+          <span class="arr">→</span>
+          <span>San Jose</span>
+        </div>
+        <div class="flow-title">
+          <span class="ent">Mexican talent and <em>nearshore power</em> in the heart of the Valley.</span>
+          <span class="est">Talento mexicano y <em>poder nearshore</em> en el corazón del Valle.</span>
+        </div>
+        <ul class="flow-points">
+          <li>
+            <span class="pt-num">01</span>
+            <span class="pt-body">
+              <span class="ent"><strong>World-class engineering talent</strong> — top graduates from UDG, ITESO, and Tec de Monterrey across software, semiconductors, AI/ML and embedded systems.</span>
+              <span class="est"><strong>Talento de ingeniería de clase mundial</strong> — egresados top de UDG, ITESO y Tec de Monterrey en software, semiconductores, IA/ML y sistemas embebidos.</span>
+            </span>
+          </li>
+          <li>
+            <span class="pt-num">02</span>
+            <span class="pt-body">
+              <span class="ent"><strong>Nearshore at scale</strong> — overlapping time zones, no offshoring drag, and real-time collaboration with U.S. teams.</span>
+              <span class="est"><strong>Nearshore a escala</strong> — zonas horarias coincidentes, sin fricciones de offshoring, colaboración en tiempo real con equipos de EE.UU.</span>
+            </span>
+          </li>
+          <li>
+            <span class="pt-num">03</span>
+            <span class="pt-body">
+              <span class="ent"><strong>Soft-landing in Silicon Valley</strong> — Mexican startups launching U.S. operations with mentorship, capital introductions, and established networks.</span>
+              <span class="est"><strong>Soft-landing en Silicon Valley</strong> — startups mexicanas lanzando operaciones en EE.UU. con mentoría, conexiones de capital y redes establecidas.</span>
+            </span>
+          </li>
+          <li>
+            <span class="pt-num">04</span>
+            <span class="pt-body">
+              <span class="ent"><strong>Innovation pipeline</strong> — Jalisco hosts <strong>70% of Mexico's semiconductor companies</strong> and 23% of its software development.</span>
+              <span class="est"><strong>Pipeline de innovación</strong> — Jalisco concentra el <strong>70% de las empresas de semiconductores</strong> y el 23% del desarrollo de software de México.</span>
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="flow-card sjc">
+        <div class="flow-direction">
+          <span>San Jose</span>
+          <span class="arr">→</span>
+          <span>Guadalajara</span>
+        </div>
+        <div class="flow-title">
+          <span class="ent">Scale into <em>LATAM</em> through Mexico's tech capital.</span>
+          <span class="est">Escala hacia <em>LATAM</em> a través de la capital tech de México.</span>
+        </div>
+        <ul class="flow-points">
+          <li>
+            <span class="pt-num">01</span>
+            <span class="pt-body">
+              <span class="ent"><strong>Natural gateway to Latin America</strong> — Spanish-speaking, USMCA-aligned, with operational and cultural proximity to the rest of the continent.</span>
+              <span class="est"><strong>Puerta natural a Latinoamérica</strong> — hispanohablante, alineado con el T-MEC, con cercanía cultural y operativa al resto del continente.</span>
+            </span>
+          </li>
+          <li>
+            <span class="pt-num">02</span>
+            <span class="pt-body">
+              <span class="ent"><strong>R&amp;D and engineering hubs</strong> — Intel, Oracle, IBM, HP and Bosch already operate large-scale labs and design centers in Guadalajara.</span>
+              <span class="est"><strong>Centros de I+D e ingeniería</strong> — Intel, Oracle, IBM, HP y Bosch ya operan laboratorios y centros de diseño a gran escala en Guadalajara.</span>
+            </span>
+          </li>
+          <li>
+            <span class="pt-num">03</span>
+            <span class="pt-body">
+              <span class="ent"><strong>Favorable tax framework</strong> — 30% R&amp;D tax credit, lower corporate rates, and no double taxation under USMCA.</span>
+              <span class="est"><strong>Marco fiscal favorable</strong> — 30% de crédito fiscal por I+D, tasas corporativas más bajas y sin doble tributación bajo el T-MEC.</span>
+            </span>
+          </li>
+          <li>
+            <span class="pt-num">04</span>
+            <span class="pt-body">
+              <span class="ent"><strong>Ciudad Creativa Digital</strong> — flagship urban regeneration project positioning Guadalajara as a digital production capital by 2030.</span>
+              <span class="est"><strong>Ciudad Creativa Digital</strong> — proyecto insignia de regeneración urbana que posiciona a Guadalajara como capital de producción digital al 2030.</span>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HUB SPOTLIGHT -->
+<section class="hub-section" id="hub">
+  <div class="hub-spotlight">
+    <div>
+      <span class="hub-flag">
+        ★&nbsp;<span class="ent">Flagship Project</span><span class="est">Proyecto Insignia</span>
+      </span>
+      <h3>
+        <span class="ent">The <em>Sister Cities Innovation Hub</em> — a physical gateway in Downtown San Jose.</span>
+        <span class="est">El <em>Sister Cities Innovation Hub</em> — una puerta física en el centro de San José.</span>
+      </h3>
+      <p>
+        <span class="ent">A physical hub where international startups, corporations and delegations from any Sister City — and beyond — soft-land into Silicon Valley. Backed by the City of San Jose and built as a permanent bridge for innovation, capital and talent.</span>
+        <span class="est">Un hub físico donde startups internacionales, corporativos y delegaciones de cualquier Ciudad Hermana — y más allá — aterrizan en Silicon Valley. Respaldado por la Ciudad de San José y construido como puente permanente para la innovación, el capital y el talento.</span>
+      </p>
+      <div class="hub-bullets">
+        <span class="hub-bullet">Soft-landing</span>
+        <span class="hub-bullet">Acceleration</span>
+        <span class="hub-bullet">Pitch events</span>
+        <span class="hub-bullet">VC access</span>
+        <span class="hub-bullet"><span class="ent">Trade missions</span><span class="est">Misiones comerciales</span></span>
+        <span class="hub-bullet">Hackathons</span>
+      </div>
+      <a href="hub.html" class="btn btn-orange">
+        <span class="ent">Explore the Hub</span>
+        <span class="est">Explorar el Hub</span>
+        <span class="btn-arrow">→</span>
+      </a>
+    </div>
+    <div class="hub-visual">
+      <div class="hub-vh">
+        <span class="label">Downtown San Jose, CA</span>
+        <span class="pin">◉</span>
+      </div>
+      <div class="hub-vb">
+        <h4>
+          <span class="ent">A landing pad,<br>by design.</span>
+          <span class="est">Plataforma de aterrizaje,<br>por diseño.</span>
+        </h4>
+        <p>
+          <span class="ent">Open to any city — Sister or not — looking for a bridge into Silicon Valley.</span>
+          <span class="est">Abierto a cualquier ciudad — Hermana o no — que busque un puente hacia Silicon Valley.</span>
+        </p>
+      </div>
+      <div class="hub-vf">
+        <div>
+          <div class="vf-num">6</div>
+          <div class="vf-lbl"><span class="ent">Stakeholder types</span><span class="est">Tipos de stakeholders</span></div>
+        </div>
+        <div>
+          <div class="vf-num">18 mo</div>
+          <div class="vf-lbl"><span class="ent">Roadmap to scale</span><span class="est">Ruta a escalar</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIENCES -->
+<section id="audiences">
+  <span class="eyebrow orange"><span class="ent">/ For Whom</span><span class="est">/ Para Quién</span></span>
+  <h2>
+    <span class="ent">Built for the <em>builders</em> on both sides.</span>
+    <span class="est">Construido para quienes <em>construyen</em> en ambos lados.</span>
+  </h2>
+  <p class="section-intro">
+    <span class="ent">Six communities driving the corridor — each with a clear path to participate.</span>
+    <span class="est">Seis comunidades que impulsan el corredor — cada una con un camino claro para participar.</span>
+  </p>
+
+  <div class="audiences-grid">
+    <div class="aud-card" data-c="1">
+      <div class="aud-icon">$</div>
+      <h4>
+        <span class="ent">Investors &amp; VCs</span>
+        <span class="est">Inversionistas y VCs</span>
+      </h4>
+      <p>
+        <span class="ent">Direct deal flow from a curated pipeline of Mexican scale-ups and Silicon Valley startups looking south.</span>
+        <span class="est">Deal flow directo de un pipeline curado de scale-ups mexicanas y startups del Valle buscando expansión hacia el sur.</span>
+      </p>
+      <div class="aud-tag">— Angels · VCs · LP networks</div>
+    </div>
+    <div class="aud-card" data-c="2">
+      <div class="aud-icon">⇄</div>
+      <h4>
+        <span class="ent">Scaling Companies</span>
+        <span class="est">Empresas en escalamiento</span>
+      </h4>
+      <p>
+        <span class="ent">Soft-landing in either market, with operational and regulatory support to expand both ways.</span>
+        <span class="est">Soft-landing en cualquiera de los dos mercados, con soporte operativo y regulatorio para expandirse en ambas direcciones.</span>
+      </p>
+      <div class="aud-tag">— Series A → C · scale-ups</div>
+    </div>
+    <div class="aud-card" data-c="3">
+      <div class="aud-icon">&lt;/&gt;</div>
+      <h4>
+        <span class="ent">Tech Talent</span>
+        <span class="est">Talento Tech</span>
+      </h4>
+      <p>
+        <span class="ent">Engineers, designers and PMs accessing cross-border opportunities, fellowships and exchanges.</span>
+        <span class="est">Ingenieros, diseñadores y PMs accediendo a oportunidades transfronterizas, becas e intercambios.</span>
+      </p>
+      <div class="aud-tag">— Engineers · PMs · designers</div>
+    </div>
+    <div class="aud-card" data-c="4">
+      <div class="aud-icon">◆</div>
+      <h4>
+        <span class="ent">Government &amp; Chambers</span>
+        <span class="est">Gobierno y Cámaras</span>
+      </h4>
+      <p>
+        <span class="ent">Trade missions, policy dialogue, and institutional channels for bilateral economic development.</span>
+        <span class="est">Misiones comerciales, diálogo de políticas y canales institucionales para el desarrollo económico bilateral.</span>
+      </p>
+      <div class="aud-tag">— City · State · Chambers</div>
+    </div>
+    <div class="aud-card" data-c="5">
+      <div class="aud-icon">◎</div>
+      <h4>
+        <span class="ent">Universities &amp; R&amp;D</span>
+        <span class="est">Universidades e I+D</span>
+      </h4>
+      <p>
+        <span class="ent">Research partnerships, student exchanges, tech transfer and joint commercialization programs.</span>
+        <span class="est">Alianzas de investigación, intercambios estudiantiles, transferencia tecnológica y comercialización conjunta.</span>
+      </p>
+      <div class="aud-tag">— UDG · SJSU · ITESO · Stanford</div>
+    </div>
+    <div class="aud-card" data-c="6">
+      <div class="aud-icon">★</div>
+      <h4>
+        <span class="ent">Corporates &amp; CVCs</span>
+        <span class="est">Corporativos y CVCs</span>
+      </h4>
+      <p>
+        <span class="ent">Innovation challenges, pilot programs and M&amp;A access to a curated pipeline of high-potential startups.</span>
+        <span class="est">Innovation challenges, programas piloto y acceso a M&amp;A en un pipeline curado de startups de alto potencial.</span>
+      </p>
+      <div class="aud-tag">— CVCs · innovation teams</div>
+    </div>
+  </div>
+</section>
+
+<!-- HUMANS OF THE CORRIDOR -->
+<section class="humans-band full" id="humans">
+  <div class="inner" style="padding-top: 110px; padding-bottom: 110px; max-width: 1320px; margin: 0 auto;">
+    <span class="eyebrow"><span class="ent">/ Humans of the Corridor</span><span class="est">/ Personas del Corredor</span></span>
+    <h2>
+      <span class="ent">The corridor is built by <em>people</em>.</span>
+      <span class="est">El corredor lo construyen las <em>personas</em>.</span>
+    </h2>
+    <p class="section-intro">
+      <span class="ent">Engineers, founders, students, public servants and artists moving across two cities — each one a node in a living network.</span>
+      <span class="est">Ingenieros, fundadores, estudiantes, servidores públicos y artistas moviéndose entre dos ciudades — cada uno un nodo en una red viva.</span>
+    </p>
+
+    <div class="humans-grid">
+      <div class="human-tile h-big">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80" alt="Engineers collaborating around laptops"/>
+        <div class="h-label">
+          <span class="h-tag aqua">Engineering</span>
+          <div class="h-text">
+            <span class="ent">10,000+ tech graduates from Jalisco every year — talent that already powers Silicon Valley.</span>
+            <span class="est">10,000+ egresados tech de Jalisco cada año — talento que ya impulsa a Silicon Valley.</span>
+          </div>
+        </div>
+      </div>
+      <div class="human-tile">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80" alt="Business meeting between two professionals"/>
+        <div class="h-label">
+          <span class="h-tag">Founders</span>
+          <div class="h-text">
+            <span class="ent">Mexican scale-ups soft-landing in San Jose.</span>
+            <span class="est">Scale-ups mexicanas aterrizando en San José.</span>
+          </div>
+        </div>
+      </div>
+      <div class="human-tile">
+        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80" alt="University students collaborating"/>
+        <div class="h-label">
+          <span class="h-tag aqua">Students</span>
+          <div class="h-text">
+            <span class="ent">UDG · ITESO · SJSU · Tec exchanges.</span>
+            <span class="est">Intercambios UDG · ITESO · SJSU · Tec.</span>
+          </div>
+        </div>
+      </div>
+      <div class="human-tile h-quote">
+        <div class="h-quote-text">
+          <span class="ent">Guadalajara and San Jose closed the diamond of information technology in North America.</span>
+          <span class="est">Guadalajara y San José cerraron el diamante de la tecnología de la información en Norteamérica.</span>
+        </div>
+        <div class="h-quote-attr">
+          <span class="ent">— Sister Cities Founding Charter, 2014</span>
+          <span class="est">— Acta fundacional del hermanamiento, 2014</span>
+        </div>
+      </div>
+      <div class="human-tile">
+        <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80" alt="Investors and team meeting"/>
+        <div class="h-label">
+          <span class="h-tag">Capital</span>
+          <div class="h-text">
+            <span class="ent">$890M of SV capital flowing into Jalisco.</span>
+            <span class="est">$890M de capital SV fluyendo a Jalisco.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CULTURE -->
+<section class="cultural-band full" id="culture">
+  <div class="inner" style="padding-top: 110px; padding-bottom: 110px;">
+    <span class="eyebrow orange"><span class="ent">/ Culture &amp; Community</span><span class="est">/ Cultura y Comunidad</span></span>
+    <h2>
+      <span class="ent">A partnership that <em>lives</em> beyond business.</span>
+      <span class="est">Una alianza que <em>vive</em> más allá de los negocios.</span>
+    </h2>
+    <p class="section-intro">
+      <span class="ent">The corridor is sustained by people. Annual events, cultural exchange, and the vibrant Jalisco diaspora in the Bay Area give this partnership its soul.</span>
+      <span class="est">El corredor lo sostienen las personas. Eventos anuales, intercambio cultural y la vibrante diáspora jalisciense en el Bay Area le dan alma a esta alianza.</span>
+    </p>
+
+    <div class="cultural-grid">
+      <div class="cultural-card">
+        <div class="cultural-photo">
+          <img src="https://images.unsplash.com/photo-1709067157886-c71fa7682f93?auto=format&fit=crop&w=900&q=80" alt="Mexican flag flying"/>
+          <div class="cultural-when">SEP <small><span class="ent">Annual</span><span class="est">Anual</span></small></div>
+        </div>
+        <div class="cultural-body">
+          <h4>
+            <span class="ent">Mexican Flag Raising</span>
+            <span class="est">Izamiento de Bandera</span>
+          </h4>
+          <p>
+            <span class="ent">Annual ceremony at San Jose City Hall during Hispanic Heritage Month, honoring the deep ties between the Jalisco community and the Bay Area.</span>
+            <span class="est">Ceremonia anual en el ayuntamiento de San José durante el Mes de la Herencia Hispana, honrando los lazos profundos entre la comunidad jalisciense y el Bay Area.</span>
+          </p>
+        </div>
+      </div>
+      <div class="cultural-card">
+        <div class="cultural-photo">
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80" alt="Business summit conference"/>
+          <div class="cultural-when">MAR <small><span class="ent">Summit</span><span class="est">Cumbre</span></small></div>
+        </div>
+        <div class="cultural-body">
+          <h4>
+            <span class="ent">Anniversary Summit</span>
+            <span class="est">Cumbre Aniversario</span>
+          </h4>
+          <p>
+            <span class="ent">Yearly milestone marking the signing of the partnership in March 2014. A platform for new bilateral announcements, MoUs and corridor commitments.</span>
+            <span class="est">Hito anual que conmemora la firma del hermanamiento en marzo de 2014. Plataforma para nuevos anuncios bilaterales, MoUs y compromisos del corredor.</span>
+          </p>
+        </div>
+      </div>
+      <div class="cultural-card">
+        <div class="cultural-photo">
+          <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80" alt="Business delegation meeting"/>
+          <div class="cultural-when">JUN <small><span class="ent">Annual</span><span class="est">Anual</span></small></div>
+        </div>
+        <div class="cultural-body">
+          <h4>
+            <span class="ent">Trade Mission Week</span>
+            <span class="est">Semana de Misiones</span>
+          </h4>
+          <p>
+            <span class="ent">Curated trade missions in both cities. 20+ tapatío startups visit Silicon Valley each year; SJ delegations explore Jalisco's ecosystem in return.</span>
+            <span class="est">Misiones comerciales curadas en ambas ciudades. 20+ startups tapatías visitan Silicon Valley al año; delegaciones de SJ exploran el ecosistema de Jalisco en retribución.</span>
+          </p>
+        </div>
+      </div>
+      <div class="cultural-card">
+        <div class="cultural-photo">
+          <img src="https://images.unsplash.com/photo-1588191969960-ff8be4d184c6?auto=format&fit=crop&w=900&q=80" alt="Mariachi performing"/>
+          <div class="cultural-when">NOV <small><span class="ent">Festival</span><span class="est">Festival</span></small></div>
+        </div>
+        <div class="cultural-body">
+          <h4>
+            <span class="ent">Mariachi Festival</span>
+            <span class="est">Festival de Mariachi</span>
+          </h4>
+          <p>
+            <span class="ent">A celebration of Jalisco's UNESCO-recognized cultural heritage, hosted at Plaza de César Chávez with binational orchestras and ensembles.</span>
+            <span class="est">Celebración del patrimonio cultural de Jalisco reconocido por UNESCO, en la Plaza de César Chávez con orquestas y ensambles binacionales.</span>
+          </p>
+        </div>
+      </div>
+      <div class="cultural-card">
+        <div class="cultural-photo">
+          <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=80" alt="Young leaders collaborating"/>
+          <div class="cultural-when">JUL <small><span class="ent">Biennial</span><span class="est">Bianual</span></small></div>
+        </div>
+        <div class="cultural-body">
+          <h4>
+            <span class="ent">Youth Innovation Summit</span>
+            <span class="est">Cumbre Juvenil de Innovación</span>
+          </h4>
+          <p>
+            <span class="ent">60 young leaders (16–24) from both cities co-create projects in climate tech, social impact and AI for good. Rotating host city.</span>
+            <span class="est">60 jóvenes líderes (16–24 años) de ambas ciudades co-crean proyectos en climate tech, impacto social e IA para el bien. Sede rotativa.</span>
+          </p>
+        </div>
+      </div>
+      <div class="cultural-card">
+        <div class="cultural-photo">
+          <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80" alt="University students with books"/>
+          <div class="cultural-when">— <small><span class="ent">Ongoing</span><span class="est">Permanente</span></small></div>
+        </div>
+        <div class="cultural-body">
+          <h4>
+            <span class="ent">Academic Exchange</span>
+            <span class="est">Intercambio Académico</span>
+          </h4>
+          <p>
+            <span class="ent">Active student-mobility agreements between UDG, ITESO, Tec de Monterrey and San Jose State University across engineering, design and business programs.</span>
+            <span class="est">Convenios activos de movilidad estudiantil entre UDG, ITESO, Tec de Monterrey y San Jose State University en ingeniería, diseño y negocios.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-section" id="gallery">
+  <div class="inner">
+    <div class="section-head">
+      <span class="kicker"><span class="ent">Gallery</span><span class="est">Galería</span></span>
+      <h2>
+        <span class="ent">Memories of the <em>partnership</em></span>
+        <span class="est">Memorias del <em>hermanamiento</em></span>
+      </h2>
+      <p class="section-lead">
+        <span class="ent">A decade of meetings, ceremonies, exchanges and shared moments between Guadalajara and San Jose.</span>
+        <span class="est">Una década de encuentros, ceremonias, intercambios y momentos compartidos entre Guadalajara y San Jose.</span>
+      </p>
+    </div>
+
+    <div class="gallery-tabs" role="tablist">
+      <button class="gallery-tab active" data-cat="all">
+        <span class="ent">All</span><span class="est">Todas</span>
+      </button>
+      <button class="gallery-tab" data-cat="firma">
+        <span class="ent">Signing ceremony</span><span class="est">Firma del hermanamiento</span>
+      </button>
+      <button class="gallery-tab" data-cat="gobierno">
+        <span class="ent">Government visits</span><span class="est">Visitas de gobierno</span>
+      </button>
+      <button class="gallery-tab" data-cat="negocios">
+        <span class="ent">Business meetings</span><span class="est">Encuentros de negocios</span>
+      </button>
+      <button class="gallery-tab" data-cat="cultura">
+        <span class="ent">Culture</span><span class="est">Cultura</span>
+      </button>
+      <button class="gallery-tab" data-cat="eye-opening">
+        <span class="ent">Eye opening</span><span class="est">Eye opening</span>
+      </button>
+    </div>
+
+    <div class="gallery-grid" id="galleryGrid"></div>
+
+    <div class="gallery-empty" id="galleryEmpty" style="display:none;">
+      <p>
+        <span class="ent">No photos yet in this category. Drop some in <code>img/gallery/&lt;category&gt;/</code> and add them to the GALLERY config.</span>
+        <span class="est">Aún no hay fotos en esta categoría. Súbelas a <code>img/gallery/&lt;categoría&gt;/</code> y agrégalas al config GALLERY.</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog">
+  <button class="lb-close" id="lbClose" aria-label="Close">×</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous">‹</button>
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Next">›</button>
+  <div class="lb-stage">
+    <img id="lbImage" src="" alt=""/>
+  </div>
+  <div class="lb-meta">
+    <div class="lb-caption" id="lbCaption"></div>
+    <div class="lb-counter"><span id="lbCurrent">1</span> / <span id="lbTotal">1</span></div>
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="cta-section" id="connect">
+  <div class="cta-box">
+    <h2>
+      <span class="ent">Build the corridor <em>with us</em>.</span>
+      <span class="est">Construye el corredor <em>con nosotros</em>.</span>
+    </h2>
+    <p>
+      <span class="ent">Whether you're an investor, a scaling company, a university partner, or simply curious about the corridor — there's a path in.</span>
+      <span class="est">Ya seas inversionista, empresa en escalamiento, socio académico, o simplemente alguien curioso sobre el corredor — hay un camino para ti.</span>
+    </p>
+    <div class="cta-buttons">
+      <a href="hub.html" class="btn btn-orange">
+        <span class="ent">Visit the Innovation Hub</span>
+        <span class="est">Visita el Hub de Innovación</span>
+        <span class="btn-arrow">→</span>
+      </a>
+      <a href="mailto:hello@gdlxsjc.org" class="btn btn-secondary">
+        <span class="ent">Contact the team</span>
+        <span class="est">Contactar al equipo</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div>
+      <div class="foot-brand">
+        <span class="foot-brand-mark"></span>
+        <span class="foot-brand-text">
+          Sister Cities
+          <small>Guadalajara <span class="x">×</span> San Jose</small>
+        </span>
+      </div>
+      <p class="foot-tag">
+        <span class="ent">A bilateral corridor for innovation, talent and capital — between Mexico's tech capital and the heart of Silicon Valley.</span>
+        <span class="est">Un corredor bilateral para la innovación, el talento y el capital — entre la capital tecnológica de México y el corazón de Silicon Valley.</span>
+      </p>
+    </div>
+    <div class="foot-col">
+      <h5><span class="ent">Program</span><span class="est">Programa</span></h5>
+      <ul>
+        <li><a href="#opportunity"><span class="ent">Opportunity</span><span class="est">Oportunidad</span></a></li>
+        <li><a href="#twoway"><span class="ent">Two-way Flow</span><span class="est">Flujo bilateral</span></a></li>
+        <li><a href="hub.html"><span class="ent">Innovation Hub</span><span class="est">Hub de Innovación</span></a></li>
+        <li><a href="#culture"><span class="ent">Culture</span><span class="est">Cultura</span></a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5><span class="ent">Audiences</span><span class="est">Audiencias</span></h5>
+      <ul>
+        <li><a href="#audiences"><span class="ent">Investors</span><span class="est">Inversionistas</span></a></li>
+        <li><a href="#audiences"><span class="ent">Scale-ups</span><span class="est">Scale-ups</span></a></li>
+        <li><a href="#audiences"><span class="ent">Tech talent</span><span class="est">Talento tech</span></a></li>
+        <li><a href="#audiences"><span class="ent">Universities</span><span class="est">Universidades</span></a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Connect</h5>
+      <ul>
+        <li><a href="mailto:hello@gdlxsjc.org">hello@gdlxsjc.org</a></li>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">Newsletter</a></li>
+        <li><a href="#"><span class="ent">Press kit</span><span class="est">Press kit</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div>© 2026 GDL × SJC Sister Cities Partnership</div>
+    <div>
+      <span class="ent">Built between Jalisco &amp; Silicon Valley</span>
+      <span class="est">Construido entre Jalisco y Silicon Valley</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const setLang = (lang) => {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('.lang-toggle button').forEach(b => {
+      b.classList.toggle('active', b.dataset.setLang === lang);
+    });
+    try { localStorage.setItem('lang', lang); } catch(e) {}
+  };
+  document.querySelectorAll('.lang-toggle button').forEach(b => {
+    b.addEventListener('click', () => setLang(b.dataset.setLang));
+  });
+  try {
+    const saved = localStorage.getItem('lang');
+    if (saved) setLang(saved);
+  } catch(e) {}
+
+  /* ============================================================
+     GALLERY — datos cargados desde /gallery.json
+     ============================================================
+     Las fotos se administran desde /admin (Decap CMS).
+     NO edites este archivo para agregar fotos — usa el admin.
+     ============================================================ */
+  const CATEGORIES = {
+    'firma':       { label_es: 'Firma del hermanamiento', label_en: 'Signing ceremony' },
+    'gobierno':    { label_es: 'Visitas de gobierno',     label_en: 'Government visits' },
+    'negocios':    { label_es: 'Encuentros de negocios',  label_en: 'Business meetings' },
+    'cultura':     { label_es: 'Cultura',                 label_en: 'Culture' },
+    'eye-opening': { label_es: 'Eye opening',             label_en: 'Eye opening' }
+  };
+
+  let GALLERY_PHOTOS = [];
+
+  /* ============ GALLERY RENDERING ============ */
+  const galleryGrid = document.getElementById('galleryGrid');
+  const galleryEmpty = document.getElementById('galleryEmpty');
+  let currentCat = 'all';
+  let currentList = [];
+  let currentIndex = 0;
+
+  function getCurrentLang() {
+    return document.documentElement.lang || 'en';
+  }
+
+  function flatPhotos(cat) {
+    const withMeta = p => ({
+      ...p,
+      _catLabelEs: (CATEGORIES[p.category] || {}).label_es || p.category,
+      _catLabelEn: (CATEGORIES[p.category] || {}).label_en || p.category
+    });
+    if (cat === 'all') return GALLERY_PHOTOS.map(withMeta);
+    return GALLERY_PHOTOS.filter(p => p.category === cat).map(withMeta);
+  }
+
+  /* Load gallery.json (with cache busting) */
+  async function loadGallery() {
+    try {
+      const res = await fetch('gallery.json?v=' + Date.now());
+      if (res.ok) {
+        const data = await res.json();
+        GALLERY_PHOTOS = (data.photos || []).slice();
+        // Sort by date desc when available, leaving undated at the end
+        GALLERY_PHOTOS.sort((a, b) => {
+          if (a.date && b.date) return new Date(b.date) - new Date(a.date);
+          if (a.date && !b.date) return -1;
+          if (!a.date && b.date) return 1;
+          return 0;
+        });
+      }
+    } catch (e) {
+      console.warn('gallery.json not available — gallery empty.', e);
+      GALLERY_PHOTOS = [];
+    }
+    renderGallery(currentCat);
+  }
+
+  function renderGallery(cat) {
+    currentCat = cat;
+    currentList = flatPhotos(cat);
+    const lang = getCurrentLang();
+    galleryGrid.innerHTML = '';
+
+    if (currentList.length === 0) {
+      galleryGrid.style.display = 'none';
+      galleryEmpty.style.display = 'block';
+      return;
+    }
+    galleryGrid.style.display = 'grid';
+    galleryEmpty.style.display = 'none';
+
+    currentList.forEach((photo, i) => {
+      const tile = document.createElement('div');
+      tile.className = 'gallery-tile';
+      tile.dataset.idx = i;
+      const tagLabel = lang === 'es' ? photo._catLabelEs : photo._catLabelEn;
+      tile.innerHTML = `
+        <img src="${photo.src}" alt="${photo.caption_en || ''}" loading="lazy"/>
+        <span class="gt-tag">${tagLabel}</span>
+      `;
+      tile.addEventListener('click', () => openLightbox(i));
+      galleryGrid.appendChild(tile);
+    });
+  }
+
+  /* ============ TABS ============ */
+  document.querySelectorAll('.gallery-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.gallery-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      renderGallery(tab.dataset.cat);
+    });
+  });
+
+  /* ============ LIGHTBOX ============ */
+  const lightbox = document.getElementById('lightbox');
+  const lbImage = document.getElementById('lbImage');
+  const lbCaption = document.getElementById('lbCaption');
+  const lbCurrent = document.getElementById('lbCurrent');
+  const lbTotal = document.getElementById('lbTotal');
+
+  function openLightbox(idx) {
+    currentIndex = idx;
+    showLightboxPhoto();
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+  function showLightboxPhoto() {
+    if (!currentList.length) return;
+    const photo = currentList[currentIndex];
+    const lang = getCurrentLang();
+    lbImage.src = photo.src;
+    lbImage.alt = photo.caption_en || '';
+    lbCaption.textContent = lang === 'es' ? (photo.caption_es || '') : (photo.caption_en || '');
+    lbCurrent.textContent = currentIndex + 1;
+    lbTotal.textContent = currentList.length;
+  }
+  function nextPhoto() {
+    currentIndex = (currentIndex + 1) % currentList.length;
+    showLightboxPhoto();
+  }
+  function prevPhoto() {
+    currentIndex = (currentIndex - 1 + currentList.length) % currentList.length;
+    showLightboxPhoto();
+  }
+
+  document.getElementById('lbClose').addEventListener('click', closeLightbox);
+  document.getElementById('lbNext').addEventListener('click', nextPhoto);
+  document.getElementById('lbPrev').addEventListener('click', prevPhoto);
+  lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) closeLightbox();
+  });
+  document.addEventListener('keydown', e => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') nextPhoto();
+    if (e.key === 'ArrowLeft') prevPhoto();
+  });
+
+  /* Re-render when language changes */
+  const origSetLang = setLang;
+  window.setLang = function(l) {
+    origSetLang(l);
+    renderGallery(currentCat);
+  };
+  document.querySelectorAll('.lang-toggle button').forEach(b => {
+    b.addEventListener('click', () => renderGallery(currentCat));
+  });
+
+  /* Initial render */
+  loadGallery();
+</script>
+
+<!-- Netlify Identity: redirect to /admin/ after login -->
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
